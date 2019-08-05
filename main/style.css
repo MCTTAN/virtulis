@@ -29,13 +29,6 @@ body {
   color: #646464;
 }
 
-#holder
-{
-	background:url(https://github.com/MCTTAN/virtulis/blob/master/media/virtulis-logo.png?raw=true) no-repeat center center;
-	height:1000px;
-	width:1000px;
-}
-
 img1 {
   display: block;
   max-width: 100%;
