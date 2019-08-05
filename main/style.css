@@ -1,6 +1,16 @@
 
 @import url('https://fonts.googleapis.com/css?family=Quicksand&display=swap');
 
+h1, h2, h3, h4, h5, h6 {
+  color: black;
+  font-family: 'Quicksand', sans-serif;
+}
+
+p {
+  color: black;
+  font-family: 'Quicksand', sans-serif;
+}
+
 html, body {
   height: 100%;
   width: 100%;
