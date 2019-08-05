@@ -23,21 +23,3 @@ body {
   background-color: #f3f3f3;
   color: #646464;
 }
-
-.header {
-  padding: 10px 40px;
-  position: fixed;
-  width: 680px;
-  border-bottom: 1px solid #e8e8e8;
-  background: #fff;
-}
-
-.header h2 {
-  font-size: 20px;
-  display: flex;
-  align-items: center;
-}
-
-.header h2 span:first-child {
-  flex: 1;
-}
