@@ -29,6 +29,15 @@ body {
   color: #646464;
 }
 
+.absolute-center{
+	width:270px;
+	height:150px;
+	position:absolute;
+	left:50%;
+	top:50%;
+	margin:-75px 0 0 -135px;
+}
+
 img1 {
   display: block;
   max-width: 100%;
