@@ -28,6 +28,13 @@ body {
   color: #646464;
 }
 
+.center {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 50%;
+}
+
 img1 {
   display: block;
   max-width: 100%;
