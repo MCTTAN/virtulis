@@ -29,11 +29,14 @@ body {
   color: #646464;
 }
 
-.center {
-  position: absolute;
-  display: block;
-  margin-top: -250px; /* Half the height */
-  margin-left: -250px; /* Half the width */
+#holder
+{
+	display:table-cell;
+	vertical-align:middle;
+	text-align:center;
+	height:300px;
+	width:300px;
+	border: 5px solid blue;
 }
 
 img1 {
