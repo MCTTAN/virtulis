@@ -6,6 +6,8 @@ output:
     social: menu
     orientation: columns
     vertical_layout: fill
+    logo: virtulis-logo.png
+    favicon: virtulis-logo.png
 ---
 
 ```{r setup, include=FALSE}
