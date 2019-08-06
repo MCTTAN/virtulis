@@ -1,9 +1,9 @@
 
 
 const config = {
-  apiKey: "<your Firebase apiKey>",
-  authDomain: "<your Firebase auth domain>",
-  projectId: "<your Firebase projectId>"
+  apiKey: "AIzaSyBxpChnKp_r1fy7B9931Cnxqe0T-OftvgY",
+  authDomain: "virtulis-da62b.firebaseapp.com",
+  projectId: "virtulis-da62b"
 }
 
 firebase.initializeApp(config)
