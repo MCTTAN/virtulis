@@ -28,3 +28,4 @@ const showSnackbar = (id, message, autoHideDuration) => {
     snackEl.fadeOut("slow");
   });
 }
+
