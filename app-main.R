@@ -5,9 +5,41 @@ ui <- navbarPage("",
                    tags$style(HTML("
       @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
       
+      myname {
+        font-familiy: 'Quicksand', sans-serif;
+        font-style: bold;
+        font-size: 50px;
+        line-height: 40px;
+        color: #1C24FF;
+      }
+      
+      
       h1 {
         font-family: 'Quicksand', sans-serif;
+        font-size: 60px;
+        line-height: 40px;
         color: #1C24FF;
+      }
+      
+      h2 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 40px;
+        line-height: 40px;
+        color: #1C24FF;
+      }
+      
+      h3 {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 20px;
+        line-height: 40px;
+        color: #1C24FF;
+      }
+      
+      p {
+        font-family: 'Quicksand', sans-serif;
+        font-size: 14px;
+        line-height: 40px;
+        color: #336380;
       }
 
     "))
@@ -15,11 +47,12 @@ ui <- navbarPage("",
                  
                  h1("virtulis"),
                  
-                 sidebarPanel(
-                   sliderInput("obs", "Number of Trials:", min = 1, max = 1000, value = 500)
-                 ),
+                 # sidebarPanel(
+                 #   sliderInput("obs", "Number of Trials:", min = 1, max = 1000, value = 500)
+                 # ),
                  
                  position = "fixed-bottom",
+                 
                  tabPanel("profile",
                           sidebarLayout(
                             sidebarPanel(
@@ -31,6 +64,10 @@ ui <- navbarPage("",
                               br(),
                               br(),
                               br(),
+                              br(),
+                              
+                              
+                              
                               h1("This is h1"),
                               h2("This is h2"),
                               h3("This is h3"),
@@ -39,9 +76,11 @@ ui <- navbarPage("",
                           ),
                           icon = icon("")
                  ),
+                 
                  tabPanel("community",
                           verbatimTextOutput("summary")
                  ),
+                 
                  navbarMenu("events",
                             tabPanel("all",
                                      DT::dataTableOutput("table")
