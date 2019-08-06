@@ -45,7 +45,7 @@ div(
       id = "submit_sign_in",
       style = "color: white; width: 100%;",
       type = "button",
-      class = "btn btn-primary btn-lg",
+      class = "btn btn-primary",
       "Sign In"
     ),
     br(),

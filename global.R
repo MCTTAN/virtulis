@@ -3,6 +3,9 @@ library(shiny)
 library(shinyjs)
 library(DT)
 
+
+library(boot)
+
 library(twilio)
 library(magrittr)
 
