@@ -18,7 +18,7 @@ hidden(fluidRow(
       br(),
       br(),
       h3("This is all the information that comes with the signed in user with 'Email/Password' authentication on Firebase"),
-      
+
       DT::DTOutput("user_out")
     )
   )
