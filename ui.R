@@ -13,9 +13,9 @@ fluidPage(
   # load shinyjs on
   shinyjs::useShinyjs(),
   
-  source("sof-auth/sign-in.R", local = TRUE)$value,
-  source("sof-auth/register.R", local = TRUE)$value,
-  source("sof-auth/verify-email.R", local = TRUE)$value,
+  source("sign-in.R", local = TRUE)$value,
+  source("register.R", local = TRUE)$value,
+  source("verify-email.R", local = TRUE)$value,
   
-  source("ui/main.R", local = TRUE)$value
+  source("main.R", local = TRUE)$value
 )
