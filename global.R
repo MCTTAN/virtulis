@@ -1,13 +1,18 @@
 
+
 # Formatting
+library(markdown)
 library(bootstrap)
 library(boot)
+library(rJava)
 library(shiny)
 library(shinyjs)
 library(shinydashboard)
 library(flexdashboard)
 library(githubinstall)
 
+# Messaging
+library(mailR)
 library(twilio)
 library(magrittr)
 

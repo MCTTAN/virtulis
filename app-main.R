@@ -1,42 +1,58 @@
 
-ui <- dashboardPage(
-  
-  skin = "black",
-  
-  dashboardHeader(title = "virtulis"),
-
-  
-  dashboardSidebar(
-    sidebarMenu(
-      menuItem("First", tabName = "first", icon = icon("dashboard")),
-      menuItem("Second", tabName = "second", icon = icon("th"))
-    )
-  ),
-  
-  dashboardBody(
-    
-    tabItems(
-      tabItem(tabName = "first",
-              h2("First tab content")
-              ),
-      
-      tabItem(tabName = "second",
-              h2("Second tab content")
-              )
-    ),
-    
-    fluidRow(
-      h2("This text is in a row, without a column")
-    ),
-    
-    fluidRow(
-      column(width = 12,
-             h2("This text is in a column in a row")
-      )
-    )
-  )
+ui <- navbarPage("",
+                 
+                 position = "fixed-bottom",
+                 tabPanel("profile",
+                          sidebarLayout(
+                            sidebarPanel(
+                              radioButtons("plotType", "Plot type",
+                                           c("Scatter"="p", "Line"="l")
+                              )
+                            ),
+                            mainPanel(
+                              plotOutput("plot")
+                            )
+                          )
+                 ),
+                 tabPanel("community",
+                          verbatimTextOutput("summary")
+                 ),
+                 navbarMenu("events",
+                            tabPanel("all",
+                                     DT::dataTableOutput("table")
+                            ),
+                            tabPanel("upcoming",
+                                     fluidRow(
+                                       column(3,
+                                              img(class="img-polaroid",
+                                                  src=paste0("http://upload.wikimedia.org/",
+                                                             "wikipedia/commons/9/92/",
+                                                             "1919_Ford_Model_T_Highboy_Coupe.jpg")),
+                                              tags$small(
+                                                "Source: Photographed at the Bay State Antique ",
+                                                "Automobile Club's July 10, 2005 show at the ",
+                                                "Endicott Estate in Dedham, MA by ",
+                                                a(href="http://commons.wikimedia.org/wiki/User:Sfoskett",
+                                                  "User:Sfoskett")
+                                              )
+                                       )
+                                     )
+                            )
+                 )
 )
 
-server <- function(input, output) {}
+server <- function(input, output, session) {
+  output$plot <- renderPlot({
+    plot(cars, type=input$plotType)
+  })
+  
+  output$summary <- renderPrint({
+    summary(cars)
+  })
+  
+  output$table <- DT::renderDataTable({
+    DT::datatable(cars)
+  })
+}
 
 shinyApp(ui, server)
