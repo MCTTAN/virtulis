@@ -61,7 +61,7 @@ hidden(div(
       id = "submit_register",
       style = "color: white; width: 100%;",
       type = "button",
-      class = "btn btn-primary btn-lg",
+      class = "btn btn-success btn-lg",
       "Register"
     ),
     br(),
