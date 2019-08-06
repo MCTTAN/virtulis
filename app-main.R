@@ -1,6 +1,24 @@
 
 ui <- navbarPage("",
                  
+                 tags$head(
+                   tags$style(HTML("
+      @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
+      
+      h1 {
+        font-family: 'Quicksand', sans-serif;
+        color: #1C24FF;
+      }
+
+    "))
+                 ),
+                 
+                 h1("virtulis"),
+                 
+                 sidebarPanel(
+                   sliderInput("obs", "Number of Trials:", min = 1, max = 1000, value = 500)
+                 ),
+                 
                  position = "fixed-bottom",
                  tabPanel("profile",
                           sidebarLayout(
@@ -10,7 +28,13 @@ ui <- navbarPage("",
                               )
                             ),
                             mainPanel(
-                              plotOutput("plot")
+                              br(),
+                              br(),
+                              br(),
+                              h1("This is h1"),
+                              h2("This is h2"),
+                              h3("This is h3"),
+                              p("This is p1")
                             )
                           ),
                           icon = icon("")
