@@ -1,7 +1,7 @@
 fluidPage(
   shiny::singleton(
     shiny::tags$head(
-      tags$link(rel = "stylesheet", href = "styles.css"),
+      tags$link(rel = "stylesheet", href = "style.css"),
       tags$link(rel = "stylesheet", href = "snackbar.css"),
       tags$script(src="snackbar.js"),
       tags$script(src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"),
