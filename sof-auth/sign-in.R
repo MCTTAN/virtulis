@@ -25,21 +25,25 @@ div(
   ),
   br(),
   
+  
+  
   div(
     class = "form-group",
     style = "width: 100%",
     tags$label(
-      tagList(icon("envelope"), "phone number"),
-      `for` = "phone number"
+      tagList(icon("phone"), "phone_number"),
+      `for` = "phone_number"
     ),
     tags$input(
-      id = "phone number",
+      id = "phone_number",
       type = "text",
       class = "form-control",
-      value = ""
+      value = "",
     )
   ),
   br(),
+  
+  
   
   div(
     class = "form-group",
@@ -65,7 +69,7 @@ div(
       id = "submit_sign_in",
       style = "color: white; width: 100%;",
       type = "button",
-      class = "btn btn-light btn-lg",
+      class = "btn btn-primary btn-lg",
       "Sign In"
     ),
     br(),

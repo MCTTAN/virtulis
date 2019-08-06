@@ -4,8 +4,8 @@ fluidPage(
       tags$link(rel = "stylesheet", href = "styles.css"),
       tags$link(rel = "stylesheet", href = "snackbar.css"),
       tags$script(src="snackbar.js"),
-      tags$script(src="https://www.gstatic.com/firebasejs/5.7.0/firebase-app.js"),
-      tags$script(src="https://www.gstatic.com/firebasejs/5.7.0/firebase-auth.js"),
+      tags$script(src="https://www.gstatic.com/firebasejs/6.3.3/firebase-app.js"),
+      tags$script(src="https://www.gstatic.com/firebasejs/6.3.3/firebase-auth.js"),
       shiny::tags$script(src="sof-auth.js")
     )
   ),

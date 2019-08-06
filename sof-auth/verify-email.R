@@ -28,7 +28,7 @@ hidden(div(
       h3("Didn't receive the verification email?"),
       tags$button(
         id = "resend_email_verification",
-        class = "btn btn-default",
+        class = "btn btn-primary",
         "Resend Verification Email"
       )
     )

@@ -25,11 +25,13 @@ hidden(div(
   ),
   br(),
   
+  
+  
   div(
     class = "form-group",
     style = "width: 100%",
     tags$label(
-      tagList(icon("envelope"), "phone number"),
+      tagList(icon("phone"), "phone number"),
       `for` = "register_phone_number"
     ),
     tags$input(
@@ -40,6 +42,8 @@ hidden(div(
     )
   ),
   br(),
+  
+  
   
   div(
     class = "form-group",
@@ -82,7 +86,7 @@ hidden(div(
       id = "submit_register",
       style = "color: white; width: 100%;",
       type = "button",
-      class = "btn btn-success btn-lg",
+      class = "btn btn-primary btn-lg",
       "Register"
     ),
     br(),
