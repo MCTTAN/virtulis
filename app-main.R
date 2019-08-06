@@ -60,25 +60,30 @@ ui <- navbarPage("",
                                   width = "50%",
                                   align = "center"),
                               
-                              
-                              
-                              
+                            
                               br(),
                               br(),
                               br(),
                               
-                              h1("Bio"),
+                              h2("Bio"),
                               
                               br(),
                   
                               p("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
                               
-                              h1("Skills"),
+                              h2("Skills"),
+                              
+                              br(),
+                              br(),
+                              br(),
+                              br(),
+                              br(),
+                              br(),
+                              br()
                               
                               
                             )
-                          ),
-                          icon = icon("")
+                          )
                  ),
                  
                  tabPanel("community",
