@@ -49,6 +49,7 @@ ui <- navbarPage("",
                                            c("Scatter"="p", "Line"="l")
                               )
                             ),
+                            
                             mainPanel(
                               br(),
                               br(),
