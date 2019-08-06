@@ -10,29 +10,12 @@ output:
     favicon: virtulis-logo.png
 ---
 
-```{r setup, include=FALSE}
+```{r}
+# Database set-up
 
-library(RMySQL)
+token <- anonymous_login(project_api = "")
 
-library(twilio)
-library(magrittr)
-
-library(flexdashboard)
-
-library(lubridate)
-library(dplyr)
-library(readr)
-
-library(RGoogleAnalytics)
-
-library(ggplot2)
-library(ggstance)
-library(ggalt)
-
-library(crimedata)
-library(pdfetch)
-library(xlsx)
-
+token$idToken
 ```
 
 ```{r}
