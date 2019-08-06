@@ -1,3 +1,11 @@
+<?php
+
+  $host="localhost";
+  $user="root";
+  $passowrd="";
+  $database="demo";
+  
+
 <!DOCTYPE html>
 
 <html>
@@ -21,7 +29,11 @@
   <body>
     
     <h1>virtulis</h1>
-        
+    
+    
+    
+<!–– Logo ––> 
+    
     <table width="100%" border="0" height="100%" align="CENTER">
       <tr><td align="CENTER">  
           <img src="https://github.com/MCTTAN/virtulis/blob/master/media/virtulis-logo.png?raw=true"
@@ -31,7 +43,29 @@
       </td></tr> 
        </table>
 
+
+
+<!–– Login ––>
+    
     <p>Login</p>
+    
+    
+    
+<!–– Form ––>
+    
+    <form method="POST" action="#">
+      
+      <div class="form_input">
+        <input type="text" name="username" placeholder="usernmae"/>
+      </div>
+      
+      <div class="form_input">
+        <input type="password" name="password" placeholder="password"/>
+      </div>
+      
+      <input type="submit" name="submit" value="Login" class="button-login"/>
+      
+    </form>
     
   </body>
   

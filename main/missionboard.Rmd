@@ -12,6 +12,8 @@ output:
 
 ```{r setup, include=FALSE}
 
+library(RMySQL)
+
 library(twilio)
 library(magrittr)
 
