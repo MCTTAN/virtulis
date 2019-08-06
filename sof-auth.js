@@ -8,13 +8,13 @@ const firebaseConfig = {
   appId: "1:727096552336:web:3434a5e281580db3"
 }
 
-firebase.initializeApp(firebaseConfig)
+firebase.initializeApp(config)
 
 const auth = firebase.auth()
 
 $(document).on("click", "#submit_sign_in", () => {
-  const email = $("#email").val();
-  const password = $("#password").val();
+  const email = $("#email").val()
+  const password = $("#password").val()
 
   auth.signInWithEmailAndPassword(email, password)
   .catch((error) => {
