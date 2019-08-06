@@ -1,3 +1,4 @@
+
 div(
   id = "sign_in_panel",
   class = "auth_panel",
@@ -7,6 +8,7 @@ div(
     "Sign In"
   ),
   br(),
+  
   div(
     class = "form-group",
     style = "width: 100%",
@@ -22,6 +24,23 @@ div(
     )
   ),
   br(),
+  
+  div(
+    class = "form-group",
+    style = "width: 100%",
+    tags$label(
+      tagList(icon("envelope"), "phone number"),
+      `for` = "phone number"
+    ),
+    tags$input(
+      id = "phone number",
+      type = "text",
+      class = "form-control",
+      value = ""
+    )
+  ),
+  br(),
+  
   div(
     class = "form-group",
     style = "width: 100%",
@@ -39,6 +58,7 @@ div(
   ),
   br(),
   br(),
+  
   div(
     style = "text-align: center;",
     tags$button(
@@ -63,6 +83,7 @@ div(
       "Forgot your password?"
     )
   ),
+  
   div(
     id = "sign_in_snackbar",
     class = "snackbar",

@@ -22,7 +22,7 @@ hidden(div(
       br(),
       h2(
         style = "line-height: 2",
-        "We just sent you a verification email.  Please check your email and come back."
+        "We just sent you a verification email."
       ),
       br(),
       h3("Didn't receive the verification email?"),
