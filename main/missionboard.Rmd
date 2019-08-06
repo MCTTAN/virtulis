@@ -10,12 +10,29 @@ output:
     favicon: virtulis-logo.png
 ---
 
+
 ```{r}
-# Database set-up
+library(shiny)
+library(shinyjs)
+library(DT)
 
-token <- anonymous_login(project_api = "")
+library(twilio)
+library(magrittr)
 
-token$idToken
+library(flexdashboard)
+
+library(lubridate)
+library(dplyr)
+library(readr)
+
+library(crimedata)
+library(pdfetch)
+library(xlsx)
+
+library(RGoogleAnalytics)
+library(ggplot2)
+library(ggstance)
+library(ggalt)
 ```
 
 ```{r}
