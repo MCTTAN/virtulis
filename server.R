@@ -5,7 +5,7 @@ function(input, output, session) {
   
   observeEvent(input$go_to_register, {
     shinyjs::show("register_panel", anim = TRUE, animType = "fade")
-    shinyjd::hide("sign_in_panel")
+    shinyjs::hide("sign_in_panel")
   }, ignoreInit = TRUE)
   
   observeEvent(input$go_to_sign_in, {
