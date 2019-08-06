@@ -1,7 +1,9 @@
 
 
 # Formatting
+library(shinythemes)
 library(markdown)
+library(purrr)
 library(bootstrap)
 library(boot)
 library(rJava)

@@ -12,7 +12,8 @@ ui <- navbarPage("",
                             mainPanel(
                               plotOutput("plot")
                             )
-                          )
+                          ),
+                          icon = icon("")
                  ),
                  tabPanel("community",
                           verbatimTextOutput("summary")
