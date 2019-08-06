@@ -1,14 +1,10 @@
 
 
-const firebaseConfig = {
+const config = {
   apiKey: "AIzaSyBxpChnKp_r1fy7B9931Cnxqe0T-OftvgY",
   authDomain: "virtulis-da62b.firebaseapp.com",
-  databaseURL: "https://virtulis-da62b.firebaseio.com",
-  projectId: "virtulis-da62b",
-  storageBucket: "virtulis-da62b.appspot.com",
-  messagingSenderId: "727096552336",
-  appId: "1:727096552336:web:3434a5e281580db3"
-};
+  projectId: "virtulis-da62b"
+}
 
 firebase.initializeApp(config)
 
