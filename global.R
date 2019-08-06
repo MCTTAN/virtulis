@@ -1,15 +1,16 @@
 
 # Formatting
 library(bootstrap)
+library(boot)
 library(shiny)
 library(shinyjs)
-
-library(boot)
+library(shinydashboard)
+library(flexdashboard)
+library(githubinstall)
 
 library(twilio)
 library(magrittr)
 
-library(flexdashboard)
 
 #############################################
 
