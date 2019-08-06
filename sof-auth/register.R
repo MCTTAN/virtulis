@@ -1,4 +1,3 @@
-
 hidden(div(
   id = "register_panel",
   class = "auth_panel",
@@ -8,7 +7,6 @@ hidden(div(
     "Register"
   ),
   br(),
-  
   div(
     class = "form-group",
     style = "width: 100%",
@@ -24,27 +22,6 @@ hidden(div(
     )
   ),
   br(),
-  
-  
-  
-  div(
-    class = "form-group",
-    style = "width: 100%",
-    tags$label(
-      tagList(icon("phone"), "phone number"),
-      `for` = "register_phone_number"
-    ),
-    tags$input(
-      id = "register_phone_number",
-      type = "text",
-      class = "form-control",
-      value = ""
-    )
-  ),
-  br(),
-  
-  
-  
   div(
     class = "form-group",
     style = "width: 100%",
@@ -61,7 +38,6 @@ hidden(div(
     )
   ),
   br(),
-  
   div(
     class = "form-group shiny-input-container",
     style = "width: 100%",
@@ -79,7 +55,6 @@ hidden(div(
   ),
   br(),
   br(),
-  
   div(
     style = "text-align: center;",
     tags$button(

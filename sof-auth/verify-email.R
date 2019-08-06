@@ -22,13 +22,13 @@ hidden(div(
       br(),
       h2(
         style = "line-height: 2",
-        "We just sent you a verification email."
+        "We just sent you a verification email.  Please check your email and come back!"
       ),
       br(),
       h3("Didn't receive the verification email?"),
       tags$button(
         id = "resend_email_verification",
-        class = "btn btn-primary",
+        class = "btn btn-default",
         "Resend Verification Email"
       )
     )

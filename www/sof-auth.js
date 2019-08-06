@@ -1,47 +1,23 @@
-
 const config = {
-  apiKey: "AIzaSyBxpChnKp_r1fy7B9931Cnxqe0T-OftvgY",
-  authDomain: "virtulis-da62b.firebaseapp.com",
-  databaseURL: "https://virtulis-da62b.firebaseio.com",
-  projectId: "virtulis-da62b",
-  storageBucket: "virtulis-da62b.appspot.com",
-  messagingSenderId: "727096552336",
-  appId: "1:727096552336:web:3434a5e281580db3"
+  apiKey: "<your Firebase apiKey>",
+  authDomain: "<your Firebase auth domain>",
+  projectId: "<your Firebase projectId>"
 }
 
 firebase.initializeApp(config)
 
 const auth = firebase.auth()
 
-
-
 $(document).on("click", "#submit_sign_in", () => {
   const email = $("#email").val()
   const password = $("#password").val()
-  const phone_number = $("#phone_number").val()
-  
-  /*auth().getUserByPhoneNumber(phone_number)
-  .catch((error) => {
-    showSnackbar("sign_in_snackbar", "Error: " + error.message)
-    console.log("sign in error: ", error)
-  })*/
-  
+
   auth.signInWithEmailAndPassword(email, password)
   .catch((error) => {
     showSnackbar("sign_in_snackbar", "Error: " + error.message)
     console.log("sign in error: ", error)
   })
 })
-
-window.recaptchaVerifier = new firebase.auth.recaptchaVerifier(
-  "#submit_sign_in", 
-  {
-    size: "invisible",
-    callbase: function(response) {
-      submitPhoneNumberAuth();
-    }
-  }
-);
 
 
 
