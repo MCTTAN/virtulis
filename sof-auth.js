@@ -6,15 +6,15 @@ const firebaseConfig = {
   storageBucket: "",
   messagingSenderId: "727096552336",
   appId: "1:727096552336:web:3434a5e281580db3"
-}
+};
 
-firebase.initializeApp(config)
+firebase.initializeApp(firebaseConfig);
 
-const auth = firebase.auth()
+const auth = firebase.auth();
 
 $(document).on("click", "#submit_sign_in", () => {
-  const email = $("#email").val()
-  const password = $("#password").val()
+  const email = $("#email").val();
+  const password = $("#password").val();
 
   auth.signInWithEmailAndPassword(email, password)
   .catch((error) => {
