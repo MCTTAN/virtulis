@@ -5,15 +5,6 @@ ui <- navbarPage("",
                    tags$style(HTML("
       @import url('https://fonts.googleapis.com/css?family=Quicksand:300,400,500,600,700&display=swap');
       
-      myname {
-        font-familiy: 'Quicksand', sans-serif;
-        font-style: bold;
-        font-size: 50px;
-        line-height: 40px;
-        color: #1C24FF;
-      }
-      
-      
       h1 {
         font-family: 'Quicksand', sans-serif;
         font-size: 60px;
@@ -37,8 +28,6 @@ ui <- navbarPage("",
       
       p {
         font-family: 'Quicksand', sans-serif;
-        font-size: 14px;
-        line-height: 40px;
         color: #336380;
       }
 
@@ -66,12 +55,27 @@ ui <- navbarPage("",
                               br(),
                               br(),
                               
+                              img(src='https://github.com/MCTTAN/virtulis/blob/master/media/police-1.jpg?raw=true',
+                                  height = "50%",
+                                  width = "50%",
+                                  align = "center"),
                               
                               
-                              h1("This is h1"),
-                              h2("This is h2"),
-                              h3("This is h3"),
-                              p("This is p1")
+                              
+                              
+                              br(),
+                              br(),
+                              br(),
+                              
+                              h1("Bio"),
+                              
+                              br(),
+                  
+                              p("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
+                              
+                              h1("Skills"),
+                              
+                              
                             )
                           ),
                           icon = icon("")
