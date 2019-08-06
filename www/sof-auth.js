@@ -20,11 +20,11 @@ $(document).on("click", "#submit_sign_in", () => {
   const password = $("#password").val()
   const phone_number = $("#phone_number").val()
   
-  auth().getUserByPhoneNumber(phone_number)
+  /*auth().getUserByPhoneNumber(phone_number)
   .catch((error) => {
     showSnackbar("sign_in_snackbar", "Error: " + error.message)
     console.log("sign in error: ", error)
-  })
+  })*/
   
   auth.signInWithEmailAndPassword(email, password)
   .catch((error) => {
