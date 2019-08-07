@@ -110,7 +110,7 @@ ui <- navbarPage("",
                           )
                  ),
                  
-                 tabPanel("department bulletin board",
+                 tabPanel("bulletin board",
                           mainPanel()
                           # verbatimTextOutput("summary")
                  ),
