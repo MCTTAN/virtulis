@@ -31,7 +31,7 @@ subtable %>%
 ```
 
 ```{r}
-
+geojsonio::geojson_write(subtable, file = "/cloud/project/data_exported/data_crime_exported.geojson")
 ```
 
 ```{r}
