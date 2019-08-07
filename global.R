@@ -17,6 +17,7 @@ library(lubridate)
 library(dplyr)
 library(readr)
 library(jsonlite)
+library(rgdal)
 
 # Messaging
 library(mailR)
