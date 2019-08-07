@@ -125,13 +125,13 @@ ui <- navbarPage("",
                           )
                  ),
                  
-                 tabPanel("messages",
+                 tabPanel("events",
                           mainPanel()
                  ),
                  
                  #navbarMenu("")
                  
-                 tabPanel("events",
+                 tabPanel("messages",
                             mainPanel()
                             # tabPanel("all",
                             #          DT::dataTableOutput("table")
