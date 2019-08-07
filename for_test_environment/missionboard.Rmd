@@ -1,0 +1,49 @@
+---
+title: "missionboard"
+output: 
+  flexdashboard::flex_dashboard:
+    theme: flatly
+    social: menu
+    orientation: columns
+    vertical_layout: fill
+    logo: virtulis-logo.png
+    favicon: virtulis-logo.png
+---
+
+```{r}
+data_crime <- get_crime_data()
+data_crime
+```
+
+```{r}
+
+list_crime_data()
+```
+
+```{r}
+subtable <- subset(data_crime, city_name == "Austin")
+```
+
+```{r}
+subtable %>% 
+    toJSON() %>%
+    write_lines("/cloud/project/data_exported/data_crime_exported.json")
+```
+
+```{r}
+
+```
+
+```{r}
+# data_crime
+# Exporting data to a tabl-delimited text file
+write.table(subtable, "/cloud/project/data_exported/data_crime_exported.txt", sep="\t")
+```
+
+
+
+
+
+
+
+
