@@ -18,6 +18,8 @@ library(dplyr)
 library(readr)
 library(jsonlite)
 library(rgdal)
+library(geojson)
+library(geojsonR)
 
 # Messaging
 library(mailR)
