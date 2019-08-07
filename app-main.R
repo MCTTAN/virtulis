@@ -61,10 +61,16 @@ ui <- navbarPage("",
                                   width = "50%",
                                   align = "center"),
                               
-                            
                               br(),
                               br(),
                               br(),
+                              
+                              h2("Partners"),
+                              
+                              textInput("text", label = h3("Text input"), value = "Enter text..."),
+                              
+                              hr(),
+                              fluidRow(column(3, verbatimTextOutput("value"))),
                               
                               h2("Bio"),
                               
@@ -72,10 +78,27 @@ ui <- navbarPage("",
                   
                               p("Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."),
                               
+                              br(),
+                              br(),
+                              br(),
+                              
                               h2("Skills"),
                               
                               br(),
+                              
+                              textInput("text", label = h3("Text input"), value = "Enter text..."),
+                              
+                              hr(),
+                              fluidRow(column(3, verbatimTextOutput("value"))),
+                              
                               br(),
+                              br(),
+                              br(),
+                              
+                              h2("Skills Visualization"),
+                              br(),
+                              p("(can switch between yours and your team's)"),
+                              
                               br(),
                               br(),
                               br(),
@@ -87,35 +110,56 @@ ui <- navbarPage("",
                           )
                  ),
                  
-                 tabPanel("community",
-                          verbatimTextOutput("summary")
+                 tabPanel("department bulletin board",
+                          mainPanel()
+                          # verbatimTextOutput("summary")
                  ),
                  
-                 navbarMenu("events",
-                            tabPanel("all",
-                                     DT::dataTableOutput("table")
-                            ),
-                            tabPanel("upcoming",
-                                     fluidRow(
-                                       column(3,
-                                              img(class="img-polaroid",
-                                                  src=paste0("http://upload.wikimedia.org/",
-                                                             "wikipedia/commons/9/92/",
-                                                             "1919_Ford_Model_T_Highboy_Coupe.jpg")),
-                                              tags$small(
-                                                "Source: Photographed at the Bay State Antique ",
-                                                "Automobile Club's July 10, 2005 show at the ",
-                                                "Endicott Estate in Dedham, MA by ",
-                                                a(href="http://commons.wikimedia.org/wiki/User:Sfoskett",
-                                                  "User:Sfoskett")
-                                              )
-                                       )
-                                     )
-                            )
+                 tabPanel("crime & community data",
+                          mainPanel(
+                          textInput("text", label = h3("Text input"), value = "Enter text..."),
+                          
+                          hr(),
+                          fluidRow(column(3, verbatimTextOutput("value")))
+                            
+                          )
+                 ),
+                 
+                 tabPanel("messages",
+                          mainPanel()
+                 ),
+                 
+                 #navbarMenu("")
+                 
+                 tabPanel("events",
+                            mainPanel()
+                            # tabPanel("all",
+                            #          DT::dataTableOutput("table")
+                            # ),
+                            # tabPanel("upcoming",
+                            #          fluidRow(
+                            #            column(3,
+                            #                   img(class="img-polaroid",
+                            #                       src=paste0("http://upload.wikimedia.org/",
+                            #                                  "wikipedia/commons/9/92/",
+                            #                                  "1919_Ford_Model_T_Highboy_Coupe.jpg")),
+                            #                   tags$small(
+                            #                     "Source: Photographed at the Bay State Antique ",
+                            #                     "Automobile Club's July 10, 2005 show at the ",
+                            #                     "Endicott Estate in Dedham, MA by ",
+                            #                     a(href="http://commons.wikimedia.org/wiki/User:Sfoskett",
+                            #                       "User:Sfoskett")
+                            #                   )
+                            #            )
+                            #          )
+                            # )
                  )
 )
 
 server <- function(input, output, session) {
+  
+  output$value <- renderPrint({ input$text })
+  
   output$plot <- renderPlot({
     plot(cars, type=input$plotType)
   })
