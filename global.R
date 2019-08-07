@@ -13,6 +13,11 @@ library(shinydashboard)
 library(flexdashboard)
 library(githubinstall)
 
+library(lubridate)
+library(dplyr)
+library(readr)
+library(jsonlite)
+
 # Messaging
 library(mailR)
 library(twilio)
@@ -23,10 +28,6 @@ library(magrittr)
 
 # Database
 library(DBI)
-
-library(lubridate)
-library(dplyr)
-library(readr)
 
 #############################################
 
