@@ -1,5 +1,5 @@
 # virtulis
 Things the app needs:
--Transition between pages "Profile", "Department", "Data", "Tasks & Events", and "Messages"
--Data visualization of crime or police data
--Messaging between police officers
+(1) Transition between pages "Profile", "Department", "Data", "Tasks & Events", and "Messages"
+(2) Data visualization of crime or police data
+(3) Messaging between police officers
