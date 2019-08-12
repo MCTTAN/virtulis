@@ -607,14 +607,14 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 }
 
 .btn-primary {
-  background: #2686e0;
-  background-image: -webkit-linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb);
-  background-image: -o-linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb);
-  background-image: -moz-linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb);
-  background-image: linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb);
+  background: #8717FC;
+  background-image: -webkit-linear-gradient(to bottom left, #8717FC, #C800FA, #E30BB7);
+  background-image: -o-linear-gradient(to bottom left, #8717FC, #C800FA, #E30BB7);
+  background-image: -moz-linear-gradient(to bottom left, #8717FC, #C800FA, #E30BB7);
+  background-image: linear-gradient(to bottom left, #8717FC, #C800FA, #E30BB7);
   background-size: 200% 200%;
   background-position: top right;
-  background-color: #2686e0;
+  background-color: #8717FC;
   transition: all 0.15s ease;
   color: #FFFFFF;
 }
@@ -632,11 +632,11 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 .btn-primary:active:hover,
 .btn-primary.active:focus,
 .btn-primary.active:hover {
-  background-color: #41a8f9 !important;
-  background-image: linear-gradient(to bottom left, #41a8f9, #68cafb, #aeecfb) !important;
-  background-image: -webkit-linear-gradient(to bottom left, #41a8f9, #68cafb, #aeecfb) !important;
-  background-image: -o-linear-gradient(to bottom left, #41a8f9, #68cafb, #aeecfb) !important;
-  background-image: -moz-linear-gradient(to bottom left, #41a8f9, #68cafb, #aeecfb) !important;
+  background-color: #C800FA !important;
+  background-image: linear-gradient(to bottom left, #C800FA, #E30BB7, #FF0D44) !important;
+  background-image: -webkit-linear-gradient(to bottom left, #C800FA, #E30BB7, #FF0D44) !important;
+  background-image: -o-linear-gradient(to bottom left, #C800FA, #E30BB7, #FF0D44) !important;
+  background-image: -moz-linear-gradient(to bottom left, #C800FA, #E30BB7, #FF0D44) !important;
   color: #FFFFFF;
   box-shadow: none;
 }
@@ -677,13 +677,13 @@ fieldset[disabled] .btn-primary:focus,
 fieldset[disabled] .btn-primary.focus,
 fieldset[disabled] .btn-primary:active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #2686e0;
-  border-color: #2686e0;
+  background-color: #8717FC;
+  border-color: #8717FC;
 }
 
 .btn-primary.btn-simple {
-  color: #2686e0;
-  border-color: #2686e0;
+  color: #8717FC;
+  border-color:#8717FC;
   background: transparent;
 }
 
@@ -691,15 +691,15 @@ fieldset[disabled] .btn-primary.active {
 .btn-primary.btn-simple:focus,
 .btn-primary.btn-simple:active,
 .btn-primary.btn-simple:not(:disabled):not(.disabled):active {
-  color: #2686e0;
-  border-color: #2686e0;
+  color: #C800FA;
+  border-color: #C800FA;
   background-color: transparent !important;
   background-image: none !important;
   box-shadow: none;
 }
 
 .btn-primary.btn-simple.active {
-  border-color: #2686e0 !important;
+  border-color: #C800FA !important;
 }
 
 .btn-primary.btn-simple.active:hover,
@@ -707,17 +707,17 @@ fieldset[disabled] .btn-primary.active {
 .btn-primary.btn-simple.active:active,
 .btn-primary.btn-simple.active:not(:disabled):not(.disabled):active {
   color: #FFFFFF;
-  border-color: #2686e0;
-  background-image: linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb) !important;
-  background-image: -webkit-linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb) !important;
-  background-image: -o-linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb) !important;
-  background-image: -moz-linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb) !important;
-  background-color: #41a8f9 !important;
+  border-color: #C800FA;
+  background-image: linear-gradient(to bottom left, #C800FA, #E30BB7, #FF0D44) !important;
+  background-image: -webkit-linear-gradient(to bottom left, #C800FA, #E30BB7, #FF0D44) !important;
+  background-image: -o-linear-gradient(to bottom left, #C800FA, #E30BB7, #FF0D44) !important;
+  background-image: -moz-linear-gradient(to bottom left, #C800FA, #E30BB7, #FF0D44) !important;
+  background-color: #C800FA !important;
   box-shadow: none;
 }
 
 .btn-primary.btn-link {
-  color: #2686e0;
+  color: #C800FA;
 }
 
 .btn-primary.btn-link:hover,
