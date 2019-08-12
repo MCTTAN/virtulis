@@ -607,14 +607,14 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
 }
 
 .btn-primary {
-  background: #064490;
-  background-image: -webkit-linear-gradient(to bottom left, #064490, #2686e0, #41a8f9);
-  background-image: -o-linear-gradient(to bottom left, #064490, #2686e0, #41a8f9);
-  background-image: -moz-linear-gradient(to bottom left, #064490, #2686e0, #41a8f9);
-  background-image: linear-gradient(to bottom left, #064490, #2686e0, #41a8f9);
+  background: #2686e0;
+  background-image: -webkit-linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb);
+  background-image: -o-linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb);
+  background-image: -moz-linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb);
+  background-image: linear-gradient(to bottom left, #2686e0, #41a8f9, #68cafb);
   background-size: 200% 200%;
   background-position: top right;
-  background-color: #064490;
+  background-color: #2686e0;
   transition: all 0.15s ease;
   color: #FFFFFF;
 }
