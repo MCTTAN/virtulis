@@ -467,15 +467,32 @@ demo = {
       myChartData.update();
     });
     $("#1").click(function() {
-      var chart_data = [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120];
+      var chart_data = [36, 55, 19, 16, 9, 8, 43, 33, 10, 40, 39, 8, 42, 11, 6, 39, 57, 37, 21, 44, 23, 22, 40, 15, 39];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
       data.labels = chart_labels;
+      //data.labels = ['SUN', 'MON', 'TUES', 'WED', 'THU', 'FRI', 'SAT'];
       myChartData.update();
     });
 
     $("#2").click(function() {
-      var chart_data = [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130];
+      var chart_data = [15, 60, 29, 5, 38, 11, 45, 29, 19, 10, 52, 20, 44, 23, 8, 42, 29, 33, 38, 48, 42, 12, 9, 58, 56];
+      var data = myChartData.config.data;
+      data.datasets[0].data = chart_data;
+      data.labels = chart_labels;
+      //data.labels = ['DAWN', 'MORNING', 'AFTERNOON', 'DUSK', 'NIGHT'];
+      myChartData.update();
+    });
+    $("#3").click(function() {
+      var chart_data = [59, 56, 40, 22, 57, 22, 59, 24, 54, 26, 32, 27, 48, 57, 47, 20, 46, 45, 48, 50, 41, 12, 58, 9, 60];
+      var data = myChartData.config.data;
+      data.datasets[0].data = chart_data;
+      data.labels = chart_labels;
+      //data.labels = [];
+      myChartData.update();
+    });
+    $("#4").click(function() {
+      var chart_data = [47, 60, 38, 19, 32, 26, 57, 29, 7, 50, 7, 14, 36, 26, 40, 52, 16, 57, 28, 46, 50, 48, 12, 23, 24];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
       data.labels = chart_labels;
