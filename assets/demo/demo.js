@@ -134,9 +134,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
-            padding: 20,
+            suggestedMin: 0,
+            suggestedMax: 30,
+            padding: 2,
             fontColor: "#2380f7"
           }
         }],
@@ -182,9 +182,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 125,
-            padding: 20,
+            suggestedMin: 0,
+            suggestedMax: 30,
+            padding: 2,
             fontColor: "#9a9a9a"
           }
         }],
@@ -230,9 +230,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 50,
-            suggestedMax: 110,
-            padding: 20,
+            suggestedMin: 0,
+            suggestedMax: 30,
+            padding: 2,
             fontColor: "#ff8a76"
           }
         }],
@@ -278,9 +278,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 50,
-            suggestedMax: 125,
-            padding: 20,
+            suggestedMin: 0,
+            suggestedMax: 30,
+            padding: 2,
             fontColor: "#9e9e9e"
           }
         }],
@@ -327,9 +327,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 60,
-            suggestedMax: 120,
-            padding: 20,
+            suggestedMin: 0,
+            suggestedMax: 30,
+            padding: 2,
             fontColor: "#9e9e9e"
           }
         }],
@@ -422,9 +422,10 @@ demo = {
     });
 
 
-
-    var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-    var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
+    var chart_labels = ['12 AM', '1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', '10 PM', '11 PM', '12 PM'];
+    var chart_data = [21, 17, 29, 9, 25, 8, 7, 16, 18, 7, 15, 14, 28, 30, 28, 29, 15, 6, 18, 16, 20, 25, 13, 16];
+    //var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    //var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
 
 
     var ctx = document.getElementById("chartBig1").getContext('2d');
@@ -517,7 +518,7 @@ demo = {
   },
 
   initGoogleMaps: function() {
-    var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
+    var myLatlng = new google.maps.LatLng(40.7121, 74.0019);
     var mapOptions = {
       zoom: 13,
       center: myLatlng,
@@ -715,7 +716,7 @@ demo = {
 
     var marker = new google.maps.Marker({
       position: myLatlng,
-      title: "Hello World!"
+      title: ""
     });
 
     // To add the marker to the map, call setMap();
@@ -727,7 +728,7 @@ demo = {
 
     $.notify({
       icon: "tim-icons icon-bell-55",
-      message: "Welcome to <b>Black Dashboard</b> - a beautiful freebie for every web developer."
+      message: ""
 
     }, {
       type: type[color],
