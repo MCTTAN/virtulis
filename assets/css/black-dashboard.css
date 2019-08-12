@@ -3862,21 +3862,21 @@ table.tablesorter thead tr .headerSortDown {
 
 .sidebar[data-color="blue"],
 .off-canvas-sidebar[data-color="blue"] {
-  background: #3358f4;
+  background: #f7882f;
   /* For browsers that do not support gradients */
-  background: -webkit-linear-gradient(90deg, #2686e0, #41a8f9);
+  background: -webkit-linear-gradient(90deg, #f7882f, #f7c331);
   /* For Safari 5.1 to 6.0 */
-  background: -o-linear-gradient(90deg, #2686e0, #41a8f9);
+  background: -o-linear-gradient(90deg, #f7882f, #f7c331);
   /* For Opera 11.1 to 12.0 */
-  background: -moz-linear-gradient(90deg, #2686e0, #41a8f9);
+  background: -moz-linear-gradient(90deg, #f7882f, #f7c331);
   /* For Firefox 3.6 to 15 */
-  background: linear-gradient(0deg, #2686e0, #41a8f9);
+  background: linear-gradient(0deg, #f7882f, #f7c331);
   /* Standard syntax */
 }
 
 .sidebar[data-color="blue"]:before,
 .off-canvas-sidebar[data-color="blue"]:before {
-  border-bottom-color: #064490;
+  border-bottom-color: #dcc7aa;
 }
 
 .sidebar[data-color="green"],
