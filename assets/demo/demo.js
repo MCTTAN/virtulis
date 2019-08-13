@@ -528,7 +528,7 @@ var crime_by_county = new Chart(ctxGreen, {
     //var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
 
 
-    var ctx_1 = document.getElementById("chartBig1").getContext('2d');
+    var ctx_1 = document.getElementById("chartBig2").getContext('2d');
 
     var gradientStroke_1 = ctx.createLinearGradient(0, 230, 0, 50);
 
