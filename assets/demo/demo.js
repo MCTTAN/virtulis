@@ -413,6 +413,12 @@ demo = {
         data: [90, 27, 60, 12, 80],
       }]
     };
+    
+    
+    
+    
+    
+    
 
     var myChart = new Chart(ctxGreen, {
       type: 'line',
@@ -474,7 +480,6 @@ demo = {
       //data.labels = ['SUN', 'MON', 'TUES', 'WED', 'THU', 'FRI', 'SAT'];
       myChartData.update();
     });
-
     $("#2").click(function() {
       var chart_data = [15, 60, 29, 5, 38, 11, 45, 29, 19, 10, 52, 20, 44, 23, 8, 42, 29, 33, 38, 48, 42, 12, 9, 58, 56];
       var data = myChartData.config.data;
@@ -498,6 +503,108 @@ demo = {
       data.labels = chart_labels;
       myChartData.update();
     });
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
+var crime_by_county = new Chart(ctxGreen, {
+      type: 'bar',
+      data: data,
+      options: gradientChartOptionsConfigurationWithTooltipGreen
+
+    });
+
+
+    var chart_labels_1 = ['Albany', 'Allegany', 'Bronx', 'Broome', 'Cattaraugus', 'Cayuga', 'Chautauqua', 'Chemung', 'Chenango', 'Clinton', 'Columbia', 'Cortland', 'Delaware', 'Dutchess', 'Erie', 'Essex', 'Franklin', 'Fulton', 'Genesee', 'Greene', 'Hamilton', 'Herkimer', 'Jefferson', 'Kings', 'Lewis', 'Livingston', 'Madison', 'Monroe', 'Montgomery', 'Nassau', 'New York', 'Niagara', 'Oneida', 'Onondaga', 'Ontario', 'Orange', 'Orleans', 'Oswego', 'Otsego', 'Putnam', 'Queens', 'Rensselaer', 'Richmond', 'Rockland', 'St. Lawrence', 'Saratoga', 'Schenectady', 'Schoharie', 'Schuyler', 'Seneca', 'Steuben', 'Suffolk', 'Sullivan', 'Tioga', 'Tompkins', 'Ulster', 'Warren', 'Washington', 'Wayne', 'Westchester', 'Wyoming', 'Yates'];
+    var chart_data_1 = [51, 56, 25, 23, 35, 54, 1, 24, 14, 62, 1, 86, 3, 43, 22, 13, 49, 7, 21, 51, 64, 41, 84, 62, 57, 3, 30, 66, 45, 6, 62, 60, 83, 100, 84, 69, 95, 4, 5, 57, 89, 94, 9, 11, 1, 86, 49, 51, 15, 9, 19, 6, 38, 8, 70, 37, 44, 3, 83, 72, 59, 71];
+    //var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    //var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
+
+
+    var ctx_1 = document.getElementById("chartBig1").getContext('2d');
+
+    var gradientStroke_1 = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
+    gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
+    var config_1 = {
+      type: 'line',
+      data: {
+        labels: chart_labels_1,
+        datasets: [{
+          label: "My First dataset",
+          fill: true,
+          backgroundColor: gradientStroke_1,
+          borderColor: '#d346b1',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          pointBackgroundColor: '#d346b1',
+          pointBorderColor: 'rgba(255,255,255,0)',
+          pointHoverBackgroundColor: '#d346b1',
+          pointBorderWidth: 20,
+          pointHoverRadius: 4,
+          pointHoverBorderWidth: 15,
+          pointRadius: 4,
+          data: chart_data_1,
+        }]
+      },
+      options: gradientChartOptionsConfigurationWithTooltipPurple
+    };
+    var crime_by_county_data = new Chart(ctx, config);
+    $("#0").click(function() {
+      var data = crime_by_county_data.config.data;
+      data.datasets[0].data = chart_data_1;
+      data.labels = chart_labels_1;
+      crime_by_county_data.update();
+    });
+    $("#1").click(function() {
+      var chart_data_1 = [36, 55, 19, 16, 9, 8, 43, 33, 10, 40, 39, 8, 42, 11, 6, 39, 57, 37, 21, 44, 23, 22, 40, 15, 39];
+      var data = crime_by_county_data.config.data;
+      data.datasets[0].data = chart_data_1;
+      data.labels = chart_labels_1;
+      //data.labels = ['SUN', 'MON', 'TUES', 'WED', 'THU', 'FRI', 'SAT'];
+      crime_by_county_data.update();
+    });
+    $("#2").click(function() {
+      var chart_data = [15, 60, 29, 5, 38, 11, 45, 29, 19, 10, 52, 20, 44, 23, 8, 42, 29, 33, 38, 48, 42, 12, 9, 58, 56];
+      var data = crime_by_county_data.config.data;
+      data.datasets[0].data = chart_data_1;
+      data.labels = chart_labels_1;
+      //data.labels = ['DAWN', 'MORNING', 'AFTERNOON', 'DUSK', 'NIGHT'];
+      crime_by_county_data.update();
+    });
+    $("#3").click(function() {
+      var chart_data = [59, 56, 40, 22, 57, 22, 59, 24, 54, 26, 32, 27, 48, 57, 47, 20, 46, 45, 48, 50, 41, 12, 58, 9, 60];
+      var data = crime_by_county_data.config.data;
+      data.datasets[0].data = chart_data_1;
+      data.labels = chart_labels_1;
+      //data.labels = [];
+      crime_by_county_data.update();
+    });
+    $("#4").click(function() {
+      var chart_data = [47, 60, 38, 19, 32, 26, 57, 29, 7, 50, 7, 14, 36, 26, 40, 52, 16, 57, 28, 46, 50, 48, 12, 23, 24];
+      var data = crime_by_county_data.config.data;
+      data.datasets[0].data = chart_data_1;
+      data.labels = chart_labels_1;
+      crime_by_county_data.update();
+    });    
+    
+    
+    
+    
+    
+    
+    
+    
 
 
     var ctx = document.getElementById("CountryChart").getContext("2d");
