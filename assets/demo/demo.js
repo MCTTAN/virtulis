@@ -358,7 +358,7 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
+      labels: ["Dawn", "Day", "Afternoon", "Dusk", "Night"],
       datasets: [{
         label: "Data",
         fill: true,
@@ -374,7 +374,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [80, 100, 70, 80, 120, 80],
+        data: [30, 15, 20, 18, 19, 25],
       }]
     };
 
@@ -394,7 +394,7 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
 
     var data = {
-      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
+      labels: ["Theft", "Car Crash", "Robbery", "Kidnapping"],
       datasets: [{
         label: "My First dataset",
         fill: true,
@@ -515,7 +515,7 @@ demo = {
     
     
 var crime_by_county = new Chart(ctxGreen, {
-      type: 'bar',
+      type: 'line',
       data: data,
       options: gradientChartOptionsConfigurationWithTooltipGreen
 
@@ -528,7 +528,7 @@ var crime_by_county = new Chart(ctxGreen, {
     //var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
 
 
-    var ctx_1 = document.getElementById("chartBig1").getContext('2d');
+    var ctx_1 = document.getElementById("chartBig2").getContext('2d');
 
     var gradientStroke_1 = ctx.createLinearGradient(0, 230, 0, 50);
 
@@ -633,7 +633,7 @@ var crime_by_county = new Chart(ctxGreen, {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [53, 20, 10, 80, 100, 45],
+          data: [51, 56, 25, 23, 35, 54, 1, 24, 14, 62, 1, 86, 3, 43, 22, 13, 49, 7, 21, 51, 64, 41, 84, 62, 57, 3, 30, 66, 45, 6, 62, 60, 83, 100, 84, 69, 95, 4, 5, 57, 89, 94, 9, 11, 1, 86, 49, 51, 15, 9, 19, 6, 38, 8, 70, 37, 44, 3, 83, 72, 59, 71],
         }]
       },
       options: gradientBarChartConfiguration
