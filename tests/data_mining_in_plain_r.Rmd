@@ -29,6 +29,17 @@ output:
 #
 # - Use the PageRank algorithm to determine the relative
 #   importance of objects in a graph.
+#
+# - Train AdaBoost to recognize 3 different species of irises.
+# - Perform a test to see how accurately AdaBoost learned the
+#   different iris species.
+#
+# - Use the kNN algorithm to recognize 3 different species of irises.
+#
+# - Use the Naive Bayes algorithm to recognize 3 different species
+#   of irises.
+#
+# - Use CART to recognize 3 different species of irises.
 ```
 
 ```{r}
@@ -37,6 +48,7 @@ output:
 
 ```{r}
 library(adabag)
+library(class)
 library(arules)
 library(C50)
 library(dplyr)
@@ -45,6 +57,7 @@ library(igraph)
 library(mclust)
 library(printr)
 library(stats)
+library(rpart)
 ```
 
 ```{r}
@@ -319,7 +332,6 @@ table(model$classification, iris$Species)
 plot(model)
 ```
 
-
 ```{r}
 ########################################################
 ```
@@ -358,12 +370,187 @@ g <- random.graph.game(n = 10, p.or.m = 1/4, directed = TRUE)
 plot(g)
 ```
 
+```{r}
+# Calculate the PageRank for each object.
 
+pr <- page.rank(g)$vector
+```
 
+```{r}
+# Output the PageRank for each object.
 
+# Create a data frame with 2 columns: Object and PageRank.
 
+# The Object column contains the numbers 1 through 10.
 
+# The PageRank column contains the PageRanks.
 
+# The data frame is sorted from highest to lowest PageRank.
 
+# This table tells you the relative importance of each
+# object in the graph.
+# - Object 8 is the most relevant with the PageRank 
+#   of 0.18.
+# - Object 3 is the least relevant with the PageRank
+#   of 0.04.
+# - (Object 8 is linked to 3 other objects: 3, 2, and 6.)
+# - (Object 3 is only linked to object 9.)
+
+df <- data.frame(Object = 1:10, PageRank = pr)
+arrange(df, desc(PageRank))
+```
+
+```{r}
+########################################################
+```
+
+```{r}
+# Take a sample of 100 rows rom the iris dataset.
+
+train.indeces <- sample(1:nrow(iris), 100)
+iris.train <- iris[train.indeces, ]
+iris.test <- iris[-train.indeces, ]
+```
+
+```{r}
+# Train a model based on the training data.
+
+# Species depends on the other columns.
+
+# The data to train AdaBoost is stored in iris.train.
+
+model <- boosting(Species ~ ., data = iris.train)
+```
+
+```{r}
+# Test the model using the test data.
+
+results <- predict(object = model, newdata = iris.test, type = "class")
+```
+
+```{r}
+# Generate a confusion matric for the results.
+
+# AdaBoost only made 2 mistakes misclassifying 2 virginica irises
+# as versicolor. A single test run isn't a lot to thoroughly
+# evaluate AdaBoost on this dataset, but this is definitely a good
+# sign.
+
+results$confusion
+```
+
+```{r}
+########################################################
+```
+
+```{r}
+# kNN is a lazy learner and isn't "trained with the goal of producing # a model for prediction. Instead, kNN does a just-in-time
+# calculation to classify new data points.
+```
+
+```{r}
+train.indeces <- sample(1:nrow(iris), 100)
+iris.train <- iris[train.indeces, ]
+iris.test <- iris[-train.indeces, ]
+```
+
+```{r}
+# Initialize kNN with the training data, and test with the
+# testing data.
+
+# The trianing dataset with the Species removed.
+
+# The test dataset with the Species removed.
+
+# The Species of the training dataset is specified by cl, which
+# stands for class.
+
+results <- knn(train = subset(iris.train, select = -Species),
+    test = subset(iris.test, select = -Species),
+    cl = iris.train$Species)
+```
+
+```{r}
+# Generate a confusion matrix for the results.
+
+# kNN misclassified 5 virginica irises as versicolor, and
+# misclassified 2 versicolor irises as virginica.
+
+table(results, iris.test$Species)
+```
+
+```{r}
+train.indeces <- sample(1:nrow(iris), 100)
+iris.train <- iris[train.indeces, ]
+iris.test <- iris[-train.indeces, ]
+```
+
+```{r}
+# Train a model based on the trainin data.
+
+# The data to train Naive Bayes is stored in iris.train, but we
+# remove the Species column. This is v.
+
+# The Species for iris.train. This is y.
+
+model <- naiveBayes(c = subset(iris.train, select = -Species), y = iris.train$Species)
+```
+
+```{r}
+# Test the model using the test data.
+
+results <- predict(object = model, newdata = iris.test, type = "class")
+```
+
+```{r}
+# Generate a confusion matrix for the results.
+
+# Naive Bayed made 2 mistakes misclassifying 2 virginica irises
+# as versicolor and another mistake misclassifying versicolor as
+# virginica.
+
+table(results, iris.test$Species)
+```
+
+```{r}
+########################################################
+```
+
+```{r}
+# Take a sample of 100 rows from the iris dataset.
+
+train.indeces <- sample(1:nrow(iris), 100)
+iris.train <- iris[train.indeces, ]
+iris.test <- iris[-train.indeces, ]
+```
+
+```{r}
+# Train a model based on the training data.
+
+# Species depends on the other columns.
+
+# The data to train CART is stored in iris.train.
+
+model <- rpart(Species ~ ., data = iris.train)
+```
+
+```{r}
+# Test the model using the test data.
+
+results <- predict(object = model, newdata = iris.test, type = "class")
+```
+
+```{r}
+# Generate a confusion matrix for the results.
+
+# The default CART model didn't do an awesome job compared to C5.0.
+# However, this is a single test run. Performing more test runs with
+# different samples would be a much more reliable metric.
+
+# CART misclassified 1 virginica iris as versicolor and 4 mistakes
+# misclassiying verficolor as virginica.
+
+table(results, iris.test$Species)
+```
 
 
