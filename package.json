@@ -1,7 +1,7 @@
 {
   "name": "black-dashboard",
   "version": "1.0.0",
-  "description": "Black Dasboard, a Black Desgin. Coded by Creative Tim",
+  "description": "",
   "main": "index.html",
   "directories": {
     "example": "root"
@@ -11,7 +11,7 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/creativetimofficial/black-dashboard.git"
+    "url": ""
   },
   "keywords": [
     "black dashboard",
@@ -31,10 +31,9 @@
     "frontend",
     "responsive bootstrap dashboard"
   ],
-  "author": "Creative Tim <hello@creative-tim.com> (https://www.creative-tim.com/)",
-  "license": "MIT",
+  "author": "",
   "bugs": {
-    "url": "https://github.com/creativetimofficial/black-dashboard/issues"
+    "url": ""
   },
   "devDependencies": {
     "gulp": "^3.9.1",
@@ -45,5 +44,5 @@
     "gulp-sourcemaps": "^2.6.4",
     "gulp-open": "^3.0.1"
   },
-  "homepage": "http://demos.creative-tim.com/black-dashboard/examples/dashboard.html?_ga=2.143239282.69692347.1519629130-329288944.1519374311"
+  "homepage": ""
 }
