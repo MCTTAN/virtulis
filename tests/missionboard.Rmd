@@ -1,0 +1,19 @@
+---
+title: "missionboard"
+output: html_document
+---
+
+```{r}
+library(adabag)
+library(arules)
+library(C50)
+library(dplyr)
+library(e1071)
+library(igraph)
+library(mclust)
+library(printr)
+```
+
+```{r}
+
+```

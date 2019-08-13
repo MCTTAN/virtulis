@@ -1,7 +1,6 @@
 library(crimedata)
 
 data_crime <- get_crime_data()
-data_crime
 
 list_crime_data()
 
