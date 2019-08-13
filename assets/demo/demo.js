@@ -528,7 +528,7 @@ var crime_by_county = new Chart(ctxGreen, {
     //var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
 
 
-    var ctx_1 = document.getElementById("chartBig2").getContext('2d');
+    var ctx_1 = document.getElementById("chartBig1").getContext('2d');
 
     var gradientStroke_1 = ctx.createLinearGradient(0, 230, 0, 50);
 
@@ -560,13 +560,13 @@ var crime_by_county = new Chart(ctxGreen, {
       options: gradientChartOptionsConfigurationWithTooltipPurple
     };
     var crime_by_county_data = new Chart(ctx, config);
-    $("#0").click(function() {
+    $("#5").click(function() {
       var data = crime_by_county_data.config.data;
       data.datasets[0].data = chart_data_1;
       data.labels = chart_labels_1;
       crime_by_county_data.update();
     });
-    $("#1").click(function() {
+    $("#6").click(function() {
       var chart_data_1 = [36, 55, 19, 16, 9, 8, 43, 33, 10, 40, 39, 8, 42, 11, 6, 39, 57, 37, 21, 44, 23, 22, 40, 15, 39];
       var data = crime_by_county_data.config.data;
       data.datasets[0].data = chart_data_1;
@@ -574,7 +574,7 @@ var crime_by_county = new Chart(ctxGreen, {
       //data.labels = ['SUN', 'MON', 'TUES', 'WED', 'THU', 'FRI', 'SAT'];
       crime_by_county_data.update();
     });
-    $("#2").click(function() {
+    $("#7").click(function() {
       var chart_data = [15, 60, 29, 5, 38, 11, 45, 29, 19, 10, 52, 20, 44, 23, 8, 42, 29, 33, 38, 48, 42, 12, 9, 58, 56];
       var data = crime_by_county_data.config.data;
       data.datasets[0].data = chart_data_1;
@@ -582,7 +582,7 @@ var crime_by_county = new Chart(ctxGreen, {
       //data.labels = ['DAWN', 'MORNING', 'AFTERNOON', 'DUSK', 'NIGHT'];
       crime_by_county_data.update();
     });
-    $("#3").click(function() {
+    $("#8").click(function() {
       var chart_data = [59, 56, 40, 22, 57, 22, 59, 24, 54, 26, 32, 27, 48, 57, 47, 20, 46, 45, 48, 50, 41, 12, 58, 9, 60];
       var data = crime_by_county_data.config.data;
       data.datasets[0].data = chart_data_1;
@@ -590,7 +590,7 @@ var crime_by_county = new Chart(ctxGreen, {
       //data.labels = [];
       crime_by_county_data.update();
     });
-    $("#4").click(function() {
+    $("#9").click(function() {
       var chart_data = [47, 60, 38, 19, 32, 26, 57, 29, 7, 50, 7, 14, 36, 26, 40, 52, 16, 57, 28, 46, 50, 48, 12, 23, 24];
       var data = crime_by_county_data.config.data;
       data.datasets[0].data = chart_data_1;
