@@ -3842,6 +3842,7 @@ table.tablesorter thead tr .headerSortDown {
   height: auto;
 }
 
+/* Blue and Pink Gradient */
 .sidebar,
 .off-canvas-sidebar {
   height: calc(100vh - 90px);
@@ -3858,6 +3859,20 @@ table.tablesorter thead tr .headerSortDown {
   margin-top: 80px;
   margin-left: 20px;
   border-radius: 5px;
+}
+
+.sidebar[data-color="pink"],
+.off-canvas-sidebar[data-color="pink"] {
+  background: #8b1465;
+  background: -webkit-linear-gradient(90deg, #8b1465, #ce168e, #eaeb21);
+  background: -o-linear-gradient(90deg, #8b1465, #ce168e, #eaeb21);
+  background: -mox-linear-gradient(90deg, #8b1465, #ce168e, #eaeb21);
+  background: linear-gradient(0deg, #8b1465, #ce168e, #eaeb21);
+}
+
+.sidebar[data-color="pink"]:before,
+.off-canvas-sidebar[data-color="pink"]:before {
+  border-bottom-color: #8b1465;
 }
 
 .sidebar[data-color="blue"],
@@ -4151,6 +4166,7 @@ table.tablesorter thead tr .headerSortDown {
   background: rgba(200, 200, 200, 0.2);
 }
 
+/* Dark Purple */
 .main-panel {
   position: relative;
   float: right;
