@@ -320,4 +320,50 @@ plot(model)
 ```
 
 
+```{r}
+########################################################
+```
+
+```{r}
+# In math, a graph is a set of objects where some of the 
+# objects are connected by links.
+
+# In PageRank, the set of objects are web pages and the
+# links are hyperlinks to other web pages.
+```
+
+```{r}
+# Like k-means, Apriori and EM, we're not going to
+# train PageRank.
+
+# Generate a random directed graph with 10 objects.
+
+# Generate a graph with 10 objects.
+
+# There's a 1 in 4 chance of a link being drawn between
+# 2 objects.
+
+# Use directed links.
+# In graphs, you can have 2 kinds of links: directed and
+# undirected. Directed links are single directional.
+# For example, a web page hyperlinking to another web
+# page is one-way. Unless the 2nd web page hyperlinks
+# back to the 1st page, the link doesn't go both ways.
+# Undirected links go both ways and are bidirectional.
+
+g <- random.graph.game(n = 10, p.or.m = 1/4, directed = TRUE)
+```
+
+```{r}
+plot(g)
+```
+
+
+
+
+
+
+
+
+
 
