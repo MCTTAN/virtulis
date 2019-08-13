@@ -3875,8 +3875,8 @@ table.tablesorter thead tr .headerSortDown {
   border-bottom-color: #8b1465;
 }
 
-.sidebar[data-color="blue"],
-.off-canvas-sidebar[data-color="blue"] {
+.sidebar[data-color="gold"],
+.off-canvas-sidebar[data-color="gold"] {
   background: #f7882f;
   /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(90deg, #f7882f, #f7c331);
@@ -3889,8 +3889,8 @@ table.tablesorter thead tr .headerSortDown {
   /* Standard syntax */
 }
 
-.sidebar[data-color="blue"]:before,
-.off-canvas-sidebar[data-color="blue"]:before {
+.sidebar[data-color="gold"]:before,
+.off-canvas-sidebar[data-color="gold"]:before {
   border-bottom-color: #dcc7aa;
 }
 
@@ -4346,11 +4346,15 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .fixed-plugin .badge-primary {
-  background-color: #e14eca;
+  background-color: #ff2079;
 }
 
-.fixed-plugin .badge-blue {
-  background-color: #1d8cf8;
+.fixed-plugin .badge-pink {
+  background-color: #8b1465;
+}
+
+.fixed-plugin .badge-gold {
+  background-color: #f7882f;
 }
 
 .fixed-plugin .badge-green {
