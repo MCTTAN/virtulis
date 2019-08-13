@@ -56,6 +56,11 @@ p <- plot_ly(showscale = FALSE) %>%
 
 ######
 
+# p <- plot_ly(midwest, x = ~percollege, color = ~state, type = "box")
+# api_create(p, filename = "r-docs-midwest-boxplots")
+
+######
+
 Sys.setenv("plotly_username"="mcttan")
 Sys.setenv("plotly_api_key"="hIxMHTtHqnM2TRhzSlxz")
 
