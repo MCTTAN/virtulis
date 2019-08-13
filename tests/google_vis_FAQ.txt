@@ -1,0 +1,7 @@
+
+7 Frequent ask questions – FAQ
+
+
+Why can’t I see motion charts when I open them from a
+local directory?
+See section 2.4 on page 16
