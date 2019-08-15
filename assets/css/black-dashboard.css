@@ -3846,9 +3846,27 @@ table.tablesorter thead tr .headerSortDown {
   height: auto;
 }
 
-/* Blue and Pink Gradient */
+/* Officer Blue */
 .sidebar,
 .off-canvas-sidebar {
+  height: calc(100vh - 90px);
+  width: 230px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center center;
+  display: block;
+  background: linear-gradient(to bottom, #003DA5 0%, #0057B8 100%);
+  box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.6);
+  margin-top: 80px;
+  margin-left: 20px;
+  border-radius: 5px;
+}
+
+.sidebar[data-color="blue-and-pink"],
+.off-canvas-sidebar[data-color="blue-and-pink"] {
   height: calc(100vh - 90px);
   width: 230px;
   position: fixed;
@@ -3863,6 +3881,11 @@ table.tablesorter thead tr .headerSortDown {
   margin-top: 80px;
   margin-left: 20px;
   border-radius: 5px;
+}
+
+.sidebar[data-color="blue-and-pink"]:before,
+.off-canvas-sidebar[data-color="blue-and-pink"]:before {
+  border-bottom-color: #8b1465;
 }
 
 .sidebar[data-color="pink"],
@@ -4351,6 +4374,10 @@ table.tablesorter thead tr .headerSortDown {
 
 .fixed-plugin .badge-primary {
   background-color: #ff2079;
+}
+
+.fixed-plugin .badge-blue-and-pink {
+  background-color: #440bd4;
 }
 
 .fixed-plugin .badge-pink {
