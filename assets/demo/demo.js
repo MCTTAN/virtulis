@@ -463,7 +463,7 @@ demo = {
           data: chart_data,
         }]
       },
-      options: gradientChartOptionsConfigurationWithTooltipPurple
+      options: gradientChartOptionsConfigurationWithTooltipBlue
     };
     var myChartData = new Chart(ctx, config);
     $("#0").click(function() {
