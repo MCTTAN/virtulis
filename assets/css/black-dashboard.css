@@ -3858,7 +3858,7 @@ table.tablesorter thead tr .headerSortDown {
   background-size: cover;
   background-position: center center;
   display: block;
-  background: linear-gradient(to bottom, #003DA5 0%, #0057B8 100%);
+  background: linear-gradient(to bottom, #3333FF 0%, #007fff 100%);
   box-shadow: 0px 0px 45px 0px rgba(0, 0, 0, 0.6);
   margin-top: 80px;
   margin-left: 20px;
@@ -4373,7 +4373,7 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .fixed-plugin .badge-primary {
-  background-color: #ff2079;
+  background-color: #007fff;
 }
 
 .fixed-plugin .badge-blue-and-pink {
