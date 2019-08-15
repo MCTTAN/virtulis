@@ -134,9 +134,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 30,
-            padding: 2,
+            suggestedMin: 60,
+            suggestedMax: 125,
+            padding: 20,
             fontColor: "#2380f7"
           }
         }],
@@ -182,9 +182,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 30,
-            padding: 2,
+            suggestedMin: 60,
+            suggestedMax: 125,
+            padding: 20,
             fontColor: "#9a9a9a"
           }
         }],
@@ -230,9 +230,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 30,
-            padding: 2,
+            suggestedMin: 50,
+            suggestedMax: 110,
+            padding: 20,
             fontColor: "#ff8a76"
           }
         }],
@@ -278,9 +278,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 30,
-            padding: 2,
+            suggestedMin: 50,
+            suggestedMax: 125,
+            padding: 20,
             fontColor: "#9e9e9e"
           }
         }],
@@ -327,9 +327,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 30,
-            padding: 2,
+            suggestedMin: 60,
+            suggestedMax: 120,
+            padding: 20,
             fontColor: "#9e9e9e"
           }
         }],
@@ -358,7 +358,7 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
 
     var data = {
-      labels: ["Dawn", "Day", "Afternoon", "Dusk", "Night"],
+      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
       datasets: [{
         label: "Data",
         fill: true,
@@ -374,7 +374,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [30, 15, 20, 18, 19, 25],
+        data: [80, 100, 70, 80, 120, 80],
       }]
     };
 
@@ -385,40 +385,9 @@ demo = {
     });
 
 
-var ctx = document.getElementById("chartLinePurpleish").getContext("2d");
 
-    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
 
-    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.2)');
-    gradientStroke.addColorStop(0.2, 'rgba(72,72,176,0.0)');
-    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
 
-    var data = {
-      labels: ["Dawn", "Day", "Afternoon", "Dusk", "Night"],
-      datasets: [{
-        label: "Data",
-        fill: true,
-        backgroundColor: gradientStroke,
-        borderColor: '#d048b6',
-        borderWidth: 2,
-        borderDash: [],
-        borderDashOffset: 0.0,
-        pointBackgroundColor: '#d048b6',
-        pointBorderColor: 'rgba(255,255,255,0)',
-        pointHoverBackgroundColor: '#d048b6',
-        pointBorderWidth: 20,
-        pointHoverRadius: 4,
-        pointHoverBorderWidth: 15,
-        pointRadius: 4,
-        data: [30, 15, 20, 18, 19, 25],
-      }]
-    };
-
-    var myChart = new Chart(ctx, {
-      type: 'line',
-      data: data,
-      options: gradientChartOptionsConfigurationWithTooltipPurple
-    });
 
 
 
@@ -436,7 +405,7 @@ var ctx = document.getElementById("chartLinePurpleish").getContext("2d");
     gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
 
     var data = {
-      labels: ["Theft", "Car Crash", "Robbery", "Kidnapping"],
+      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
       datasets: [{
         label: "My First dataset",
         fill: true,
@@ -455,20 +424,29 @@ var ctx = document.getElementById("chartLinePurpleish").getContext("2d");
         data: [90, 27, 60, 12, 80],
       }]
     };
-    
-    var myChart = new Chart(ctx, {
+
+    var myChart = new Chart(ctxGreen, {
       type: 'line',
       data: data,
       options: gradientChartOptionsConfigurationWithTooltipGreen
+
     });
-    
-    
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     var chart_labels = ['12 AM', '1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', '10 PM', '11 PM', '12 PM'];
     var chart_data = [21, 17, 29, 9, 25, 8, 7, 16, 18, 7, 15, 14, 28, 30, 28, 29, 15, 6, 18, 16, 20, 25, 13, 16, 20];
-    //var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-    //var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
 
 
     var ctx = document.getElementById("chartBig1").getContext('2d');
@@ -500,7 +478,7 @@ var ctx = document.getElementById("chartLinePurpleish").getContext("2d");
           data: chart_data,
         }]
       },
-      options: gradientChartOptionsConfigurationWithTooltipPurple
+      options: gradientChartOptionsConfigurationWithTooltipBlue
     };
     var myChartData = new Chart(ctx, config);
     $("#0").click(function() {
@@ -540,18 +518,67 @@ var ctx = document.getElementById("chartLinePurpleish").getContext("2d");
       data.labels = chart_labels;
       myChartData.update();
     });
-    
-    
 
+
+
+
+
+
+
+
+
+
+
+
+    var ctx = document.getElementById("CountryChart").getContext("2d");
+
+    var gradientStroke = ctx.createLinearGradient(0, 230, 0, 50);
+
+    gradientStroke.addColorStop(1, 'rgba(29,140,248,0.2)');
+    gradientStroke.addColorStop(0.4, 'rgba(29,140,248,0.0)');
+    gradientStroke.addColorStop(0, 'rgba(29,140,248,0)'); //blue colors
+
+
+    var myChart = new Chart(ctx, {
+      type: 'bar',
+      responsive: true,
+      legend: {
+        display: false
+      },
+      data: {
+        labels: ['USA', 'GER', 'AUS', 'UK', 'RO', 'BR'],
+        datasets: [{
+          label: "Countries",
+          fill: true,
+          backgroundColor: gradientStroke,
+          hoverBackgroundColor: gradientStroke,
+          borderColor: '#1f8ef1',
+          borderWidth: 2,
+          borderDash: [],
+          borderDashOffset: 0.0,
+          data: [53, 20, 10, 80, 100, 45],
+        }]
+      },
+      options: gradientChartOptionsConfigurationWithTooltipOrange
+    });
 
   },
+  
+  
+  
+  
+  
+  
+  
+  
+  
 
   initGoogleMaps: function() {
-    var myLatlng = new google.maps.LatLng(40.7121, 74.0019);
+    var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
     var mapOptions = {
       zoom: 13,
       center: myLatlng,
-      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+      scrollwheel: true, 
       styles: [{
           "elementType": "geometry",
           "stylers": [{
@@ -745,10 +772,9 @@ var ctx = document.getElementById("chartLinePurpleish").getContext("2d");
 
     var marker = new google.maps.Marker({
       position: myLatlng,
-      title: ""
+      title: "Hello World!"
     });
-
-    // To add the marker to the map, call setMap();
+    
     marker.setMap(map);
   },
 
@@ -757,7 +783,6 @@ var ctx = document.getElementById("chartLinePurpleish").getContext("2d");
 
     $.notify({
       icon: "tim-icons icon-bell-55",
-      message: ""
 
     }, {
       type: type[color],
