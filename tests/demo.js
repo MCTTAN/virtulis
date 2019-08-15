@@ -515,12 +515,13 @@ demo = {
     });
 
   },
+
   initGoogleMaps: function() {
     var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
     var mapOptions = {
       zoom: 13,
       center: myLatlng,
-      scrollwheel: true, 
+      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
       styles: [{
           "elementType": "geometry",
           "stylers": [{
@@ -716,7 +717,8 @@ demo = {
       position: myLatlng,
       title: "Hello World!"
     });
-    
+
+    // To add the marker to the map, call setMap();
     marker.setMap(map);
   },
 
@@ -725,6 +727,7 @@ demo = {
 
     $.notify({
       icon: "tim-icons icon-bell-55",
+      message: "Welcome to <b>Black Dashboard</b> - a beautiful freebie for every web developer."
 
     }, {
       type: type[color],
