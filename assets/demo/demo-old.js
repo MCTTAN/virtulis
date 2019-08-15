@@ -134,9 +134,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 30,
-            padding: 2,
+            suggestedMin: 60,
+            suggestedMax: 125,
+            padding: 20,
             fontColor: "#2380f7"
           }
         }],
@@ -182,9 +182,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 30,
-            padding: 2,
+            suggestedMin: 60,
+            suggestedMax: 125,
+            padding: 20,
             fontColor: "#9a9a9a"
           }
         }],
@@ -230,9 +230,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 30,
-            padding: 2,
+            suggestedMin: 50,
+            suggestedMax: 110,
+            padding: 20,
             fontColor: "#ff8a76"
           }
         }],
@@ -278,9 +278,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 30,
-            padding: 2,
+            suggestedMin: 50,
+            suggestedMax: 125,
+            padding: 20,
             fontColor: "#9e9e9e"
           }
         }],
@@ -327,9 +327,9 @@ demo = {
             zeroLineColor: "transparent",
           },
           ticks: {
-            suggestedMin: 0,
-            suggestedMax: 30,
-            padding: 2,
+            suggestedMin: 60,
+            suggestedMax: 120,
+            padding: 20,
             fontColor: "#9e9e9e"
           }
         }],
@@ -358,7 +358,7 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
 
     var data = {
-      labels: ["Dawn", "Day", "Afternoon", "Dusk", "Night"],
+      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'],
       datasets: [{
         label: "Data",
         fill: true,
@@ -374,7 +374,7 @@ demo = {
         pointHoverRadius: 4,
         pointHoverBorderWidth: 15,
         pointRadius: 4,
-        data: [30, 15, 20, 18, 19, 25],
+        data: [80, 100, 70, 80, 120, 80],
       }]
     };
 
@@ -394,7 +394,7 @@ demo = {
     gradientStroke.addColorStop(0, 'rgba(66,134,121,0)'); //green colors
 
     var data = {
-      labels: ["Theft", "Car Crash", "Robbery", "Kidnapping"],
+      labels: ['JUL', 'AUG', 'SEP', 'OCT', 'NOV'],
       datasets: [{
         label: "My First dataset",
         fill: true,
@@ -413,12 +413,6 @@ demo = {
         data: [90, 27, 60, 12, 80],
       }]
     };
-    
-    
-    
-    
-    
-    
 
     var myChart = new Chart(ctxGreen, {
       type: 'line',
@@ -428,10 +422,9 @@ demo = {
     });
 
 
-    var chart_labels = ['12 AM', '1 AM', '2 AM', '3 AM', '4 AM', '5 AM', '6 AM', '7 AM', '8 AM', '9 AM', '10 AM', '11 AM', '12 PM', '1 PM', '2 PM', '3 PM', '4 PM', '5 PM', '6 PM', '7 PM', '8 PM', '9 PM', '10 PM', '11 PM', '12 PM'];
-    var chart_data = [21, 17, 29, 9, 25, 8, 7, 16, 18, 7, 15, 14, 28, 30, 28, 29, 15, 6, 18, 16, 20, 25, 13, 16, 20];
-    //var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-    //var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
+
+    var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
+    var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
 
 
     var ctx = document.getElementById("chartBig1").getContext('2d');
@@ -473,138 +466,20 @@ demo = {
       myChartData.update();
     });
     $("#1").click(function() {
-      var chart_data = [36, 55, 19, 16, 9, 8, 43, 33, 10, 40, 39, 8, 42, 11, 6, 39, 57, 37, 21, 44, 23, 22, 40, 15, 39];
+      var chart_data = [80, 120, 105, 110, 95, 105, 90, 100, 80, 95, 70, 120];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
       data.labels = chart_labels;
-      //data.labels = ['SUN', 'MON', 'TUES', 'WED', 'THU', 'FRI', 'SAT'];
       myChartData.update();
     });
+
     $("#2").click(function() {
-      var chart_data = [15, 60, 29, 5, 38, 11, 45, 29, 19, 10, 52, 20, 44, 23, 8, 42, 29, 33, 38, 48, 42, 12, 9, 58, 56];
-      var data = myChartData.config.data;
-      data.datasets[0].data = chart_data;
-      data.labels = chart_labels;
-      //data.labels = ['DAWN', 'MORNING', 'AFTERNOON', 'DUSK', 'NIGHT'];
-      myChartData.update();
-    });
-    $("#3").click(function() {
-      var chart_data = [59, 56, 40, 22, 57, 22, 59, 24, 54, 26, 32, 27, 48, 57, 47, 20, 46, 45, 48, 50, 41, 12, 58, 9, 60];
-      var data = myChartData.config.data;
-      data.datasets[0].data = chart_data;
-      data.labels = chart_labels;
-      //data.labels = [];
-      myChartData.update();
-    });
-    $("#4").click(function() {
-      var chart_data = [47, 60, 38, 19, 32, 26, 57, 29, 7, 50, 7, 14, 36, 26, 40, 52, 16, 57, 28, 46, 50, 48, 12, 23, 24];
+      var chart_data = [60, 80, 65, 130, 80, 105, 90, 130, 70, 115, 60, 130];
       var data = myChartData.config.data;
       data.datasets[0].data = chart_data;
       data.labels = chart_labels;
       myChartData.update();
     });
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-    
-var crime_by_county = new Chart(ctxGreen, {
-      type: 'line',
-      data: data,
-      options: gradientChartOptionsConfigurationWithTooltipGreen
-
-    });
-
-
-    var chart_labels_1 = ['Albany', 'Allegany', 'Bronx', 'Broome', 'Cattaraugus', 'Cayuga', 'Chautauqua', 'Chemung', 'Chenango', 'Clinton', 'Columbia', 'Cortland', 'Delaware', 'Dutchess', 'Erie', 'Essex', 'Franklin', 'Fulton', 'Genesee', 'Greene', 'Hamilton', 'Herkimer', 'Jefferson', 'Kings', 'Lewis', 'Livingston', 'Madison', 'Monroe', 'Montgomery', 'Nassau', 'New York', 'Niagara', 'Oneida', 'Onondaga', 'Ontario', 'Orange', 'Orleans', 'Oswego', 'Otsego', 'Putnam', 'Queens', 'Rensselaer', 'Richmond', 'Rockland', 'St. Lawrence', 'Saratoga', 'Schenectady', 'Schoharie', 'Schuyler', 'Seneca', 'Steuben', 'Suffolk', 'Sullivan', 'Tioga', 'Tompkins', 'Ulster', 'Warren', 'Washington', 'Wayne', 'Westchester', 'Wyoming', 'Yates'];
-    var chart_data_1 = [51, 56, 25, 23, 35, 54, 1, 24, 14, 62, 1, 86, 3, 43, 22, 13, 49, 7, 21, 51, 64, 41, 84, 62, 57, 3, 30, 66, 45, 6, 62, 60, 83, 100, 84, 69, 95, 4, 5, 57, 89, 94, 9, 11, 1, 86, 49, 51, 15, 9, 19, 6, 38, 8, 70, 37, 44, 3, 83, 72, 59, 71];
-    //var chart_labels = ['JAN', 'FEB', 'MAR', 'APR', 'MAY', 'JUN', 'JUL', 'AUG', 'SEP', 'OCT', 'NOV', 'DEC'];
-    //var chart_data = [100, 70, 90, 70, 85, 60, 75, 60, 90, 80, 110, 100];
-
-
-    var ctx_1 = document.getElementById("chartBig2").getContext('2d');
-
-    var gradientStroke_1 = ctx.createLinearGradient(0, 230, 0, 50);
-
-    gradientStroke.addColorStop(1, 'rgba(72,72,176,0.1)');
-    gradientStroke.addColorStop(0.4, 'rgba(72,72,176,0.0)');
-    gradientStroke.addColorStop(0, 'rgba(119,52,169,0)'); //purple colors
-    var config_1 = {
-      type: 'line',
-      data: {
-        labels: chart_labels_1,
-        datasets: [{
-          label: "My First dataset",
-          fill: true,
-          backgroundColor: gradientStroke_1,
-          borderColor: '#d346b1',
-          borderWidth: 2,
-          borderDash: [],
-          borderDashOffset: 0.0,
-          pointBackgroundColor: '#d346b1',
-          pointBorderColor: 'rgba(255,255,255,0)',
-          pointHoverBackgroundColor: '#d346b1',
-          pointBorderWidth: 20,
-          pointHoverRadius: 4,
-          pointHoverBorderWidth: 15,
-          pointRadius: 4,
-          data: chart_data_1,
-        }]
-      },
-      options: gradientChartOptionsConfigurationWithTooltipPurple
-    };
-    var crime_by_county_data = new Chart(ctx, config);
-    $("#5").click(function() {
-      var data = crime_by_county_data.config.data;
-      data.datasets[0].data = chart_data_1;
-      data.labels = chart_labels_1;
-      crime_by_county_data.update();
-    });
-    $("#6").click(function() {
-      var chart_data_1 = [36, 55, 19, 16, 9, 8, 43, 33, 10, 40, 39, 8, 42, 11, 6, 39, 57, 37, 21, 44, 23, 22, 40, 15, 39];
-      var data = crime_by_county_data.config.data;
-      data.datasets[0].data = chart_data_1;
-      data.labels = chart_labels_1;
-      //data.labels = ['SUN', 'MON', 'TUES', 'WED', 'THU', 'FRI', 'SAT'];
-      crime_by_county_data.update();
-    });
-    $("#7").click(function() {
-      var chart_data = [15, 60, 29, 5, 38, 11, 45, 29, 19, 10, 52, 20, 44, 23, 8, 42, 29, 33, 38, 48, 42, 12, 9, 58, 56];
-      var data = crime_by_county_data.config.data;
-      data.datasets[0].data = chart_data_1;
-      data.labels = chart_labels_1;
-      //data.labels = ['DAWN', 'MORNING', 'AFTERNOON', 'DUSK', 'NIGHT'];
-      crime_by_county_data.update();
-    });
-    $("#8").click(function() {
-      var chart_data = [59, 56, 40, 22, 57, 22, 59, 24, 54, 26, 32, 27, 48, 57, 47, 20, 46, 45, 48, 50, 41, 12, 58, 9, 60];
-      var data = crime_by_county_data.config.data;
-      data.datasets[0].data = chart_data_1;
-      data.labels = chart_labels_1;
-      //data.labels = [];
-      crime_by_county_data.update();
-    });
-    $("#9").click(function() {
-      var chart_data = [47, 60, 38, 19, 32, 26, 57, 29, 7, 50, 7, 14, 36, 26, 40, 52, 16, 57, 28, 46, 50, 48, 12, 23, 24];
-      var data = crime_by_county_data.config.data;
-      data.datasets[0].data = chart_data_1;
-      data.labels = chart_labels_1;
-      crime_by_county_data.update();
-    });    
-    
-    
-    
-    
-    
-    
-    
-    
 
 
     var ctx = document.getElementById("CountryChart").getContext("2d");
@@ -623,9 +498,9 @@ var crime_by_county = new Chart(ctxGreen, {
         display: false
       },
       data: {
-        labels: ['Albany', 'Allegany', 'Bronx', 'Broome', 'Cattaraugus', 'Cayuga', 'Chautauqua', 'Chemung', 'Chenango', 'Clinton', 'Columbia', 'Cortland', 'Delaware', 'Dutchess', 'Erie', 'Essex', 'Franklin', 'Fulton', 'Genesee', 'Greene', 'Hamilton', 'Herkimer', 'Jefferson', 'Kings', 'Lewis', 'Livingston', 'Madison', 'Monroe', 'Montgomery', 'Nassau', 'New York', 'Niagara', 'Oneida', 'Onondaga', 'Ontario', 'Orange', 'Orleans', 'Oswego', 'Otsego', 'Putnam', 'Queens', 'Rensselaer', 'Richmond', 'Rockland', 'St. Lawrence', 'Saratoga', 'Schenectady', 'Schoharie', 'Schuyler', 'Seneca', 'Steuben', 'Suffolk', 'Sullivan', 'Tioga', 'Tompkins', 'Ulster', 'Warren', 'Washington', 'Wayne', 'Westchester', 'Wyoming', 'Yates'],
+        labels: ['USA', 'GER', 'AUS', 'UK', 'RO', 'BR'],
         datasets: [{
-          label: "Counties",
+          label: "Countries",
           fill: true,
           backgroundColor: gradientStroke,
           hoverBackgroundColor: gradientStroke,
@@ -633,20 +508,19 @@ var crime_by_county = new Chart(ctxGreen, {
           borderWidth: 2,
           borderDash: [],
           borderDashOffset: 0.0,
-          data: [51, 56, 25, 23, 35, 54, 1, 24, 14, 62, 1, 86, 3, 43, 22, 13, 49, 7, 21, 51, 64, 41, 84, 62, 57, 3, 30, 66, 45, 6, 62, 60, 83, 100, 84, 69, 95, 4, 5, 57, 89, 94, 9, 11, 1, 86, 49, 51, 15, 9, 19, 6, 38, 8, 70, 37, 44, 3, 83, 72, 59, 71],
+          data: [53, 20, 10, 80, 100, 45],
         }]
       },
       options: gradientBarChartConfiguration
     });
 
   },
-
   initGoogleMaps: function() {
-    var myLatlng = new google.maps.LatLng(40.7121, 74.0019);
+    var myLatlng = new google.maps.LatLng(40.748817, -73.985428);
     var mapOptions = {
       zoom: 13,
       center: myLatlng,
-      scrollwheel: false, //we disable de scroll over the map, it is a really annoing when you scroll through page
+      scrollwheel: true, 
       styles: [{
           "elementType": "geometry",
           "stylers": [{
@@ -840,10 +714,9 @@ var crime_by_county = new Chart(ctxGreen, {
 
     var marker = new google.maps.Marker({
       position: myLatlng,
-      title: ""
+      title: "Hello World!"
     });
-
-    // To add the marker to the map, call setMap();
+    
     marker.setMap(map);
   },
 
@@ -852,7 +725,6 @@ var crime_by_county = new Chart(ctxGreen, {
 
     $.notify({
       icon: "tim-icons icon-bell-55",
-      message: ""
 
     }, {
       type: type[color],
