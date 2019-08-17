@@ -15,8 +15,6 @@ navbarPage(
 
       tags$head(
         # Include our custom CSS
-        tags$script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.16/iframeResizer.contentWindow.min.js",
-                    type="text/javascript")
         includeCSS("styles.css"),
         includeScript("gomap.js")
       ),
