@@ -1,0 +1,12 @@
+name: predict-accidents
+title: predict-accidents
+username:
+account: mcttan
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1093222
+bundleId: 2329094
+url: https://mcttan.shinyapps.io/predict-accidents/
+when: 1566051934.62316
+asMultiple: FALSE
+asStatic: FALSE

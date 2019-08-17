@@ -9,12 +9,14 @@ years <- seq(2000,2008)
 
 navbarPage(
   title="IBM Data Science Experience", id="nav",
-
+  HTML('<div data-iframe-height></div>')
   tabPanel(
     div(class="outer",
 
       tags$head(
         # Include our custom CSS
+        tags$script(src="https://cdnjs.cloudflare.com/ajax/libs/iframe-resizer/3.5.16/iframeResizer.contentWindow.min.js",
+                    type="text/javascript")
         includeCSS("styles.css"),
         includeScript("gomap.js")
       ),

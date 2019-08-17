@@ -1,0 +1,12 @@
+name: flights
+title: flights
+username:
+account: mcttan
+server: shinyapps.io
+hostUrl: https://api.shinyapps.io/v1
+appId: 1093226
+bundleId: 2329098
+url: https://mcttan.shinyapps.io/flights/
+when: 1566052047.7222
+asMultiple: FALSE
+asStatic: FALSE
