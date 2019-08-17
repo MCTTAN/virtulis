@@ -6,10 +6,10 @@ library(leaflet)
 
 months <- seq(1,12)
 years <- seq(2000,2008)
-
+HTML('<div data-iframe-height></div>')
 navbarPage(
   title="IBM Data Science Experience", id="nav",
-  HTML('<div data-iframe-height></div>')
+  
   tabPanel(
     div(class="outer",
 
