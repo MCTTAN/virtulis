@@ -12,8 +12,8 @@ function(input, output, session) {
   output$map <- renderLeaflet({
     leaflet() %>%
       addTiles(
-        urlTemplate = "//{s}.tiles.mapbox.com/v3/jcheng.map-5ebohr46/{z}/{x}/{y}.png",
-        attribution = 'Maps by <a href="http://www.mapbox.com/">Mapbox</a>'
+        urlTemplate = "//{s}.tiles.mapbox.com/v3/mapbox.mapbox-streets-v8/{z}/{x}/{y}.png"
+        # urlTemplate = "//{s}.tiles.mapbox.com/v3/jcheng.map-5ebohr46/{z}/{x}/{y}.png"
       ) %>%
       setView(lng = -73.81, lat = 40.71, zoom = 11)
   })
@@ -35,7 +35,7 @@ function(input, output, session) {
       clearShapes() %>%
       addCircles(~LONGITUDE, ~LATITUDE, radius=radius,
                  stroke=FALSE, fillOpacity=0.9, fillColor=pal(colorData)) %>%
-      addLegend("bottomright", pal=pal, values=colorData, title="Probability of Accidents", 
+      addLegend("bottomright", pal=pal, values=colorData, title="Projected Crime Rate per 100,000", 
                 layerId="colorLegend")
   })
 

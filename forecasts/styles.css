@@ -14,7 +14,9 @@ div.outer {
 
 /* Customize fonts */
 body, label, input, button, select { 
-  font-family: 'Helvetica Neue', Helvetica;
+  /*font-family: 'Helvetica Neue', Helvetica;*/
+  font-family: 'Poppins';
+  font-style: normal;
   font-weight: 200;
 }
 h1, h2, h3, h4 { font-weight: 400; }
@@ -43,7 +45,7 @@ h1, h2, h3, h4 { font-weight: 400; }
   font-size: 16px;
 }
 
-/* If not using map tiles, show a white background */
+/* If not using map tiles, show a purple background */
 .leaflet-container {
-  background-color: white !important;
+  background-color: #2F113E !important;
 }
