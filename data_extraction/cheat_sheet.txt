@@ -1,0 +1,18 @@
+# convert("mtcars.dta", "mtcars.sav")
+
+# write.table(subtable, "/cloud/project/data_exported/data_crime_exported.txt", sep="\t")
+
+# data <-read.csv("http://www.calvin.edu/~lk24/courses/Data/grandrapidsweather.csv")
+
+# IMPORT, EXPORT, CONVERT
+# https://cran.r-project.org/web/packages/rio/vignettes/rio.html
+
+# https://developer.ibm.com/clouddataservices/2016/11/03/open-crime-data/
+
+# https://www.r-bloggers.com/getting-data-from-an-online-source/
+# https://theodi.org/article/how-to-use-r-to-access-data-on-the-web/
+# https://www.dezyre.com/data-science-in-r-programming-tutorial/r-tutorial-importing-data-from-web
+
+# write.csv(MyData, file = "MyData.csv",row.names=FALSE)
+# write.csv(MyData, file = "MyData.csv",row.names=FALSE, na="")
+# write.table(MyData, file = "MyData.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")

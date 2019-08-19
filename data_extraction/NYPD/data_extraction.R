@@ -1,9 +1,12 @@
 library(crimedata)
 library(readxl)
 library(xlsx)
+library(data.table)
+library(RCurl)
+library(RSocrata)
 
 # setwd("/cloud/project/NYPD/data_extraction")
-setwd("../virtulis/NYPD/data_extraction")
+setwd("../virtulis/data_extraction/NYPD")
 
 data_crime <- get_crime_data()
 list_crime_data()
@@ -19,28 +22,22 @@ write.csv(nyc_open_data, file = "complaint_data_historic.csv")
 nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/5uac-w243.csv")
 write.csv(nyc_open_data, file = "complaint_data_current_year_to_date.csv")
 
-nyc_open_data <- read_excel("https://www1.nyc.gov/assets/nypd/downloads/excel/crime_statistics/cs-en-us-city.xlsx")
-write.csv(nyc_open_data, file = "citywide_crime_statistics_weekly.csv")
+nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/uip8-fykc.csv")
+write.csv(nyc_open_data, file = "arrest_data_year_to_date.csv")
 
-# Does not work:
-# motor_vehicle_collisions <- read_excel("https://data.cityofnewyork.us/api/views/h9gi-nx95/files/b5fd8e71-ca48-4e96-bf63-1b8a7c4cc47b?download=true&filename=Collision_DataDictionary.xlsx")
-# write.csv(motor_vehicle_collisons, file = "motor_vehicle_collisions.csv")
+nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/8h9b-rp9u.csv")
+write.csv(nyc_open_data, file = "arrests_data_historic.csv")
 
-# convert("mtcars.dta", "mtcars.sav")
+nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/833y-fsy8.csv")
+write.csv(nyc_open_data, file = "shooting_incident_data_historic.csv")
 
-# write.table(subtable, "/cloud/project/data_exported/data_crime_exported.txt", sep="\t")
+nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/5ucz-vwe8.csv")
+write.csv(nyc_open_data, file = "shooting_incident_data_year_to_date.csv")
 
-# data <-read.csv("http://www.calvin.edu/~lk24/courses/Data/grandrapidsweather.csv")
+nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/sv2w-rv3k.csv")
+write.csv(nyc_open_data, file = "criminal_court_summons_historic.csv")
 
-# IMPORT, EXPORT, CONVERT
-# https://cran.r-project.org/web/packages/rio/vignettes/rio.html
+nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/mv4k-y93f.csv")
+write.csv(nyc_open_data, file = "criminal_court_summons_incident_level_data_year_to_date.csv")
 
-# https://developer.ibm.com/clouddataservices/2016/11/03/open-crime-data/
 
-# https://www.r-bloggers.com/getting-data-from-an-online-source/
-# https://theodi.org/article/how-to-use-r-to-access-data-on-the-web/
-# https://www.dezyre.com/data-science-in-r-programming-tutorial/r-tutorial-importing-data-from-web
-
-# write.csv(MyData, file = "MyData.csv",row.names=FALSE)
-# write.csv(MyData, file = "MyData.csv",row.names=FALSE, na="")
-# write.table(MyData, file = "MyData.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
