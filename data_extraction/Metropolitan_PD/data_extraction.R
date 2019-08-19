@@ -4,10 +4,14 @@ library(xlsx)
 library(data.table)
 library(RCurl)
 library(RSocrata)
+library(sp)
 library(rgdal)
 library(downloader)
 library(geojsonio)
 library(rjson)
+library(RJSONIO)
+library(jsonlite)
+library(SparkR)
 
 # setwd("/cloud/project/data_extraction/Metropolitan_PD")
 setwd("~/virtulis/data_extraction/Metropolitan_PD")
@@ -27,4 +31,4 @@ crime_incidents_in_2017
 
 ### JSON
 
-crime_incidents_in_2017 <- fromJSON(file= "<filename.json>" )
+# crime_incidents_in_2017 <- fromJSON(file= "<filename.json>" )
