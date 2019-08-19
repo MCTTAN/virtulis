@@ -4,9 +4,14 @@ library(xlsx)
 library(data.table)
 library(RCurl)
 library(RSocrata)
+library(rgdal)
+library(downloader)
+library(rjson)
 
-# setwd("/cloud/project/NYPD/data_extraction")
-setwd("../virtulis/data_extraction/NYPD")
+# setwd("/cloud/project/data_extraction/NYPD")
+setwd("~/virtulis/data_extraction/NYPD")
+
+### CSV
 
 data_crime <- get_crime_data()
 list_crime_data()
@@ -40,4 +45,7 @@ write.csv(nyc_open_data, file = "criminal_court_summons_historic.csv")
 nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/mv4k-y93f.csv")
 write.csv(nyc_open_data, file = "criminal_court_summons_incident_level_data_year_to_date.csv")
 
+### GeoJSON
+
+### JSON
 

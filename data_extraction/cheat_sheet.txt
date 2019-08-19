@@ -1,4 +1,9 @@
+
+
+
 # convert("mtcars.dta", "mtcars.sav")
+
+### For CSV
 
 # write.table(subtable, "/cloud/project/data_exported/data_crime_exported.txt", sep="\t")
 
@@ -16,3 +21,7 @@
 # write.csv(MyData, file = "MyData.csv",row.names=FALSE)
 # write.csv(MyData, file = "MyData.csv",row.names=FALSE, na="")
 # write.table(MyData, file = "MyData.csv",row.names=FALSE, na="",col.names=FALSE, sep=",")
+
+### For GeoJSON
+
+# http://rstudio-pubs-static.s3.amazonaws.com/84577_d3eb8b4712b64dbdb810773578d3c726.html
