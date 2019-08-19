@@ -9,6 +9,7 @@ subtable <- subset(data_crime, city_name == "Austin")
 write.csv(MyData, file = "data-crime-austin.csv")
 # data <-read.csv("http://www.calvin.edu/~lk24/courses/Data/grandrapidsweather.csv")
 
+# https://www.r-bloggers.com/getting-data-from-an-online-source/
 
 # write.csv(MyData, file = "MyData.csv",row.names=FALSE)
 # write.csv(MyData, file = "MyData.csv",row.names=FALSE, na="")
