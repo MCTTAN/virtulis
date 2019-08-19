@@ -2,18 +2,25 @@ library(crimedata)
 library(readxl)
 library(xlsx)
 
-# setwd("/cloud/project/data_extraction")
-setwd("../virtulis/data_extraction")
+# setwd("/cloud/project/NYPD/data_extraction")
+setwd("../virtulis/NYPD/data_extraction")
 
 data_crime <- get_crime_data()
 list_crime_data()
 subtable <- subset(data_crime, city_name == "New York")
 write.csv(subtable, file = "crimedata_new_york.csv")
 
-motor_vehicle_collisions <- read.csv("https://data.cityofnewyork.us/resource/h9gi-nx95.csv")
-write.csv(motor_vehicle_collisions, file = "motor_vehicle_collisions.csv")
+nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/h9gi-nx95.csv")
+write.csv(nyc_open_data, file = "motor_vehicle_collisions.csv")
 
+nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/qgea-i56i.csv")
+write.csv(nyc_open_data, file = "complaint_data_historic.csv")
 
+nyc_open_data <- read.csv("https://data.cityofnewyork.us/resource/5uac-w243.csv")
+write.csv(nyc_open_data, file = "complaint_data_current_year_to_date.csv")
+
+nyc_open_data <- read_excel("https://www1.nyc.gov/assets/nypd/downloads/excel/crime_statistics/cs-en-us-city.xlsx")
+write.csv(nyc_open_data, file = "citywide_crime_statistics_weekly.csv")
 
 # Does not work:
 # motor_vehicle_collisions <- read_excel("https://data.cityofnewyork.us/api/views/h9gi-nx95/files/b5fd8e71-ca48-4e96-bf63-1b8a7c4cc47b?download=true&filename=Collision_DataDictionary.xlsx")
