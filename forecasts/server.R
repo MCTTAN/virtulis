@@ -15,7 +15,7 @@ function(input, output, session) {
         urlTemplate = "//{s}.tiles.mapbox.com/v3/mapbox.mapbox-streets-v8/{z}/{x}/{y}.png"
         # urlTemplate = "//{s}.tiles.mapbox.com/v3/jcheng.map-5ebohr46/{z}/{x}/{y}.png"
       ) %>%
-      setView(lng = -73.81, lat = 40.71, zoom = 11)
+      setView(lng = -73.81, lat = 40.71, zoom = 11)   ##### Get user location
   })
 
   observe({
