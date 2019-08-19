@@ -12,7 +12,8 @@ function(input, output, session) {
   output$map <- renderLeaflet({
     leaflet() %>%
       addTiles(
-        urlTemplate = "//{s}.tiles.mapbox.com/v3/mapbox.mapbox-streets-v8/{z}/{x}/{y}.png"
+        urlTemplate = "https://api.tiles.mapbox.com/mapbox-gl-js/v1.2.1/mapbox-gl.css"
+        # urlTemplate = "//{s}.tiles.mapbox.com/v3/mapbox.mapbox-streets-v8/{z}/{x}/{y}.png"
         # urlTemplate = "//{s}.tiles.mapbox.com/v3/jcheng.map-5ebohr46/{z}/{x}/{y}.png"
       ) %>%
       setView(lng = -73.81, lat = 40.71, zoom = 11)   ##### Get user location
