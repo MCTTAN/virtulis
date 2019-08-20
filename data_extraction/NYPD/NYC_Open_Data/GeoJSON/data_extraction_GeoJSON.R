@@ -18,5 +18,17 @@ devtools::install_github("ropensci/geojsonio")
 # setwd("/cloud/project/data_extraction/NYPD/NYC_Open_Data/GeoJSON")
 setwd("~/virtulis/data_extraction/NYPD/NYC_Open_Data/GeoJSON")
 
-nyc_open_data <- geojson_read("https://data.cityofnewyork.us/resource/h9gi-nx95.geojson")
-# writeOGR(nyc_open_data, dsn="~/virtulis/data_extraction/NYPD/NYC_Open_Data/GeoJSON/motor_vehicle_collisions.GeoJSON", layer="nyc_open_data", driver="GeoJSON")
+u <- "https://data.cityofnewyork.us/resource/h9gi-nx95.geojson"
+downloader::download(url = u, destfile = "~/virtulis/data_extraction/NYC_Open_Data/motor_vehicle_collisions.GeoJSON")
+# nyc_open_data <- read.table("https://data.cityofnewyork.us/resource/h9gi-nx95.geojson")
+# nyc_open_data
+
+u <- "https://data.cityofnewyork.us/resource/qgea-i56i.geojson"
+downloader::download(url = u, destfile = "~/virtulis/data_extraction/NYC_Open_Data/complaint_data_historic.GeoJSON")
+
+u <- "https://data.cityofnewyork.us/resource/5uac-w243.geojson"
+downloader::download(url = u, destfile = "~/virtulis/data_extraction/NYC_Open_Data/complaint_data_current_year_to_date.GeoJSON")
+
+u <- "https://data.cityofnewyork.us/resource/h9gi-nx95.geojson"
+downloader::download(url = u, destfile = "~/virtulis/data_extraction/NYC_Open_Data/motor_vehicle_collisions_summary.GeoJSON")
+

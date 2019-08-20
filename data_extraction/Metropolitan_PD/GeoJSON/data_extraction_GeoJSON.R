@@ -25,8 +25,14 @@ setwd("~/virtulis/data_extraction/Metropolitan_PD")
 
 u <- "https://opendata.arcgis.com/datasets/6af5cb8dc38e4bcbac8168b27ee104aa_38.geojson"
 downloader::download(url = u, destfile = "~/virtulis/data_extraction/Metropolitan_PD/crime_incidents_in_2017.GeoJSON")
-crime_incidents_in_2017 <- read.table("https://opendata.arcgis.com/datasets/6af5cb8dc38e4bcbac8168b27ee104aa_38.geojson")
-crime_incidents_in_2017
+# crime_incidents_in_2017 <- read.table("https://opendata.arcgis.com/datasets/6af5cb8dc38e4bcbac8168b27ee104aa_38.geojson")
+# crime_incidents_in_2017
+
+
+
+
+
+
 # geojsonio::geojson_write(gas, file = "/tmp/gas2.geojson")
 
 ### JSON
