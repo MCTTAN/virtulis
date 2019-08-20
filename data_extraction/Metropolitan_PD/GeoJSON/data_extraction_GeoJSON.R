@@ -14,7 +14,7 @@ library(jsonlite)
 library(SparkR)
 
 # setwd("/cloud/project/data_extraction/Metropolitan_PD")
-setwd("~/virtulis/data_extraction/Metropolitan_PD")
+setwd("~/virtulis/data_extraction/Metropolitan_PD/GeoJSON")
 
 ### CSV
 
@@ -24,7 +24,7 @@ setwd("~/virtulis/data_extraction/Metropolitan_PD")
 ### GeoJSON
 
 u <- "https://opendata.arcgis.com/datasets/6af5cb8dc38e4bcbac8168b27ee104aa_38.geojson"
-downloader::download(url = u, destfile = "~/virtulis/data_extraction/Metropolitan_PD/crime_incidents_in_2017.GeoJSON")
+downloader::download(url = u, destfile = "~/virtulis/data_extraction/Metropolitan_PD/GeoJSON/crime_incidents_in_2017.GeoJSON")
 # crime_incidents_in_2017 <- read.table("https://opendata.arcgis.com/datasets/6af5cb8dc38e4bcbac8168b27ee104aa_38.geojson")
 # crime_incidents_in_2017
 
