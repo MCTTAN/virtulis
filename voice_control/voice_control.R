@@ -1,0 +1,11 @@
+library(RColorBrewer)
+library(scales)
+library(lattice)
+library(dplyr)
+library (plotly)
+library(leaflet)
+library(shiny)
+library(bindr)
+library(DT)
+
+#shiny::runGitHub("abhishekms1047/Talk-to-R-Shiny")
