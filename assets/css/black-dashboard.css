@@ -333,7 +333,8 @@
   background-image: linear-gradient(to bottom left, #344675, #263148, #344675);
   background-size: 200% 200%;
   background-position: top right;
-  background-color: #344675;
+  background-color: #000000;
+  /* background-color: #344675; */
   transition: all 0.15s ease;
   color: #FFFFFF;
 }
@@ -360,7 +361,8 @@
 .navbar .navbar-nav>a.btn:active:hover,
 .navbar .navbar-nav>a.btn.active:focus,
 .navbar .navbar-nav>a.btn.active:hover {
-  background-color: #263148 !important;
+  background-color: #000000 !important;
+  /* background-color: #263148 !important; */
   background-image: linear-gradient(to bottom left, #344675, #263148, #344675) !important;
   background-image: -webkit-linear-gradient(to bottom left, #344675, #263148, #344675) !important;
   background-image: -o-linear-gradient(to bottom left, #344675, #263148, #344675) !important;
@@ -476,7 +478,8 @@ fieldset[disabled] .navbar .navbar-nav>a.btn.active {
   background-image: -webkit-linear-gradient(to bottom left, #344675, #263148, #344675) !important;
   background-image: -o-linear-gradient(to bottom left, #344675, #263148, #344675) !important;
   background-image: -moz-linear-gradient(to bottom left, #344675, #263148, #344675) !important;
-  background-color: #263148 !important;
+  /* background-color: #263148 !important; */
+  background-color: #000000 !important;
   box-shadow: none;
 }
 
@@ -3865,6 +3868,7 @@ table.tablesorter thead tr .headerSortDown {
   border-radius: 5px;
 }
 
+/*
 .sidebar[data-color="blue-and-pink"],
 .off-canvas-sidebar[data-color="blue-and-pink"] {
   height: calc(100vh - 90px);
@@ -3905,34 +3909,68 @@ table.tablesorter thead tr .headerSortDown {
 .sidebar[data-color="gold"],
 .off-canvas-sidebar[data-color="gold"] {
   background: #f7882f;
-  /* For browsers that do not support gradients */
+
   background: -webkit-linear-gradient(90deg, #f7882f, #f7c331);
-  /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(90deg, #f7882f, #f7c331);
-  /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(90deg, #f7882f, #f7c331);
-  /* For Firefox 3.6 to 15 */
   background: linear-gradient(0deg, #f7882f, #f7c331);
-  /* Standard syntax */
 }
 
 .sidebar[data-color="gold"]:before,
 .off-canvas-sidebar[data-color="gold"]:before {
   border-bottom-color: #dcc7aa;
 }
+*/
+
+.sidebar[data-color="light-blue-green"],
+.off-canvas-sidebar[data-color="light-blue-green"] {
+  background: #08B3E5;
+  background: -webkit-linear-gradient(90deg, #08B3E5, #0FBED8, #14C9CB, #1BD7BB, #22E4AC, #2AF598);
+  background: -o-linear-gradient(90deg, #08B3E5, #0FBED8, #14C9CB, #1BD7BB, #22E4AC, #2AF598);
+  background: -moz-linear-gradient(90deg, #08B3E5, #0FBED8, #14C9CB, #1BD7BB, #22E4AC, #2AF598);
+  background: linear-gradient(0deg, #08B3E5, #0FBED8, #14C9CB, #1BD7BB, #22E4AC, #2AF598);
+}
+
+.sidebar[data-color="light-blue-green"]:before,
+.off-canvas-sidebar[data-color="peacock"]:before {
+  border-bottom-color: #08B3E5;
+}
+
+.sidebar[data-color="purple-blue"],
+.off-canvas-sidebar[data-color="purple-blue"] {
+  background: #6644AF;
+  background: -webkit-linear-gradient(90deg, #6644AF, #4D6FBE, #369ACD, #1EC4DC, #07EFEB);
+  background: -o-linear-gradient(90deg, #6644AF, #4D6FBE, #369ACD, #1EC4DC, #07EFEB);
+  background: -moz-linear-gradient(90deg, #6644AF, #4D6FBE, #369ACD, #1EC4DC, #07EFEB);
+  background: linear-gradient(0deg, #6644AF, #4D6FBE, #369ACD, #1EC4DC, #07EFEB);
+}
+
+.sidebar[data-color="purple-blue"]:before,
+.off-canvas-sidebar[data-color="peacock"]:before {
+  border-bottom-color: #6644AF;
+}
+
+.sidebar[data-color="peacock"],
+.off-canvas-sidebar[data-color="peacock"] {
+  background: #2A044A;
+  background: -webkit-linear-gradient(90deg, #2A044A, #0B2E59, #0D6759, #7AB317, #A0C55F);
+  background: -o-linear-gradient(90deg, #2A044A, #0B2E59, #0D6759, #7AB317, #A0C55F);
+  background: -moz-linear-gradient(90deg, #2A044A, #0B2E59, #0D6759, #7AB317, #A0C55F);
+  background: linear-gradient(0deg, #2A044A, #0B2E59, #0D6759, #7AB317, #A0C55F);
+}
+
+.sidebar[data-color="peacock"]:before,
+.off-canvas-sidebar[data-color="peacock"]:before {
+  border-bottom-color: #2A044A;
+}
 
 .sidebar[data-color="green"],
 .off-canvas-sidebar[data-color="green"] {
   background: #01897d;
-  /* For browsers that do not support gradients */
   background: -webkit-linear-gradient(90deg, #01897d, #01be85);
-  /* For Safari 5.1 to 6.0 */
   background: -o-linear-gradient(90deg, #01897d, #01be85);
-  /* For Opera 11.1 to 12.0 */
   background: -moz-linear-gradient(90deg, #01897d, #01be85);
-  /* For Firefox 3.6 to 15 */
   background: linear-gradient(0deg, #01897d, #01be85);
-  /* Standard syntax */
 }
 
 .sidebar[data-color="green"]:before,
@@ -4193,8 +4231,21 @@ table.tablesorter thead tr .headerSortDown {
   background: rgba(200, 200, 200, 0.2);
 }
 
-/* Dark Purple */
+/* Dark Blue - Default Background Color */
 .main-panel {
+  position: relative;
+  float: right;
+  width: 100%;
+  min-height: 100vh;
+  background: linear-gradient(#000B18, #00172D, #00264D);
+  -webkit-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+  -moz-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+  -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+  -ms-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+  transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
+}
+/* Dark Purple - Default Background Color */
+/* .main-panel {
   position: relative;
   float: right;
   width: 100%;
@@ -4205,7 +4256,7 @@ table.tablesorter thead tr .headerSortDown {
   -o-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   -ms-transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
   transition: all 0.5s cubic-bezier(0.685, 0.0473, 0.346, 1);
-}
+} */
 
 .main-panel>.navbar {
   margin-bottom: 0;
@@ -4315,7 +4366,8 @@ table.tablesorter thead tr .headerSortDown {
   width: 290px;
   border-radius: 0.1875rem;
   padding: 0 10px;
-  background: linear-gradient(#222a42, #1d253b);
+  background: #000000;
+  /* background: linear-gradient(#222a42, #1d253b); */
 }
 
 .fixed-plugin .dropdown .dropdown-menu .tim-icons {
@@ -4373,6 +4425,27 @@ table.tablesorter thead tr .headerSortDown {
 }
 
 .fixed-plugin .badge-primary {
+  background-color: linear-gradient(#000B18, #00172D, #00264D);
+}
+
+.fixed-plugin .badge-light-blue-green {
+  background-color: linear-gradient(#08B3E5, #0FBED8, #14C9CB, #1BD7BB, #22E4AC, #2AF598);
+}
+
+.fixed-plugin .badge-purple-blue {
+  background-color: linear-gradient(#6644AF, #4D6FBE, #369ACD, #1EC4DC, #07EFEB);
+}
+
+.fixed-plugin .badge-peacock {
+  background-color: linear-gradient(#2A044A, #0B2E59, #0D6759, #7AB317, #A0C55F);
+}
+
+.fixed-plugin .badge-green {
+  background-color: #00f2c3;
+}
+
+/*
+.fixed-plugin .badge-primary {
   background-color: #007fff;
 }
 
@@ -4388,10 +4461,6 @@ table.tablesorter thead tr .headerSortDown {
   background-color: #f7882f;
 }
 
-.fixed-plugin .badge-green {
-  background-color: #00f2c3;
-}
-
 .fixed-plugin .badge-orange {
   background-color: #ff8d72;
 }
@@ -4399,6 +4468,7 @@ table.tablesorter thead tr .headerSortDown {
 .fixed-plugin .badge-red {
   background-color: #fd5d93;
 }
+*/
 
 .fixed-plugin .light-badge,
 .fixed-plugin .dark-badge {
@@ -5693,6 +5763,7 @@ table.tablesorter thead tr .headerSortDown {
   }
 }
 
+/* White Background Color - Alternative Background Color */
 .white-content {
   background: #f5f6fa;
 }
@@ -6024,5 +6095,3 @@ table.tablesorter thead tr .headerSortDown {
 .white-content .main-panel .footer .copyright {
   color: #1d253b;
 }
-
-/*# sourceMappingURL=dashboard-free.css.map */
