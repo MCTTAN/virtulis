@@ -7,5 +7,7 @@ library(leaflet)
 library(shiny)
 library(bindr)
 library(DT)
+library(leaflet)
 
+shiny::runGitHub("mcttan/virtulis/voice_control")
 #shiny::runGitHub("abhishekms1047/Talk-to-R-Shiny")
