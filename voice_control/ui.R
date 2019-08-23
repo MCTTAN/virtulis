@@ -16,7 +16,7 @@ navbarPage("virtulis", id="nav",
                     div(class="outer",
                         
                         tags$head(
-                          href = "https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800",
+                          tags$link(rel = "stylesheet", type = "text/css", href = "https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800"),
                           includeCSS("styles.css"),
                           includeScript("gomap.js")
                         ),
