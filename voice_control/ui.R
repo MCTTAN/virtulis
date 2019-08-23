@@ -67,12 +67,12 @@ navbarPage("virtulis", id = "nav",
                              conditionalPanel("input.states",
                                               selectInput("cities", "Cities", c("All cities"=""), multiple=TRUE)
                              )
-                      ),
-                      column(3,
-                             conditionalPanel("input.states",
-                                              selectInput("zipcodes", "Zipcodes", c("All zipcodes"=""), multiple=TRUE)
-                             )
                       )
+                      # column(3,
+                      #        conditionalPanel("input.states",
+                      #                         selectInput("zipcodes", "Zipcodes", c("All zipcodes"=""), multiple=TRUE)
+                      #        )
+                      # )
                     ),
                     fluidRow(
                       column(1,
@@ -82,8 +82,8 @@ navbarPage("virtulis", id = "nav",
                              numericInput("maxScore", "Max score", min=0, max=100, value=100)
                       )
                     ),
-                    hr(),
-                    DT::dataTableOutput("ziptable")
+                    hr()
+                    # DT::dataTableOutput("ziptable")
            ),
            
            # conditionalPanel("false", icon("heartbeat"))
