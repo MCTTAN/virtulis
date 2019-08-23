@@ -16,13 +16,15 @@ div.outer {
 /* <link href="https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800" rel="stylesheet" /> */
 body, label, input, button, select { 
   /* font-family: 'Helvetica Neue', Helvetica; */
+  /* font-weight: 200; */
   font-family: 'Poppins';
-  font-weight: 200;
+  font-weight: 400;
 }
 
 h1, h2, h3, h4 { 
   font-family: 'Poppins';
-  font-weight: 400;
+  font-weight: 300;
+  /* font-weight: 400; */
 }
 
 
