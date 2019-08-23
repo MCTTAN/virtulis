@@ -2,6 +2,7 @@ library(tidyverse)
 library(lubridate)
 library(tidyr)
 library(base)
+library(dplyr)
 
 ### ARREST DATA (YEAR TO DATE)
 
@@ -33,7 +34,6 @@ arrest_weekdays <- weekdays(as.Date(data$arrest_date))
 
 law_cat_cd <- data$law_cat_cd # Level of offense: felony, misdemeanor, violation; string
 
-### Rename items
 data$arrest_boro <- ifelse(data$arrest_boro == 'B', 'Bronx', data$arrest_boro)
 data$arrest_boro <- ifelse(data$arrest_boro == 'S', 'Staten Island', data$arrest_boro)
 data$arrest_boro <- ifelse(data$arrest_boro == 'K', 'Brooklyn', data$arrest_boro)
@@ -44,7 +44,6 @@ arrest_boro <- data$arrest_boro # Borough of arrest: B(Bronx), S(Staten Island),
 
 arrest_precinct <- data$arrest_precinct # Precinct where the arrest occurred; num
 
-### Rename items
 # data <- subset(data, data$jurisdiction_code == 0 & data$jurisdiction_code == 1 & data$jurisdiction_code == 2)
 # data$jurisdiction_code <- subset(data$jurisdiction_code, data$jurisdiction_code <= 2)
 data$jurisdiction_code <- ifelse(data$jurisdiction_code == '0', 'Patrol', data$jurisdiction_code)

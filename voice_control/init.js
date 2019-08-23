@@ -3,7 +3,7 @@ var initVoice = function() {
     
     // Default Values
     var zoom = 4;
-    Shiny.onInputChange('zip', 19104);
+    // Shiny.onInputChange('zip', 19104);
     Shiny.onInputChange('color', 'education');
     Shiny.onInputChange('size', 'income');
     Shiny.onInputChange('top', 0);
@@ -14,6 +14,7 @@ var initVoice = function() {
     Shiny.onInputChange('remove', 3);
 
     var voice_commands = {
+      /*
       'go (to) (zip) (code) :zip': function(zip) { Shiny.onInputChange('zip', zip); },
       'color (by) :color': function(color) { Shiny.onInputChange('color', color); },
       'size (by) :size': function(size) { Shiny.onInputChange('size', size); },
@@ -25,6 +26,7 @@ var initVoice = function() {
         zoom = zoom - 1;
         Shiny.onInputChange('zoom', zoom);
       },
+      */
       'top :top (places) (by) population': function(top) {
         if(top == 'one') { top = 1; }
         else if (top == 'two') { top = 2; }
