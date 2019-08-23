@@ -83,10 +83,12 @@ function(input, output, session) {
   output$scatterPlot <- renderPlotly({
   
     # Y versus X
-    if(input$ploty == "Date of Arrest" && input$plotx == "Level of Offense")
-    {
-      plot_ly(data = zipsInBounds(), type = "scatter", mode = 'markers', x = ~"Date of Arrest", y = ~"Level of Offense") %>% layout(title = "Graph 'Date of Arrest' by 'Level of Offense'")
-    }
+    
+    # if(input$ploty == "Date of Arrest" && input$plotx == "Level of Offense")
+    # {
+    #   plot_ly(data = zipsInBounds(), type = "scatter", mode = 'markers', x = ~"Date of Arrest", y = ~"Level of Offense") %>% layout(title = "Graph 'Date of Arrest' by 'Level of Offense'")
+    # }
+    
     # else if(input$ploty == "Date of Arrest" && input$plotx == "Borough")
     # {
     #   plot_ly(data = zipsInBounds(), type = "scatter", mode = 'markers', x = ~"Date of Arrest", y = ~"Borough") %>% layout(title = "Graph 'Date of Arrest' by 'Borough'")
@@ -246,10 +248,10 @@ function(input, output, session) {
     #   plot_ly(data = zipsInBounds(), type = "scatter", model = 'markers', x = ~"Age Group", y = ~"Level of Offense") %>% layout(title = "Graph 'Age Group' by 'Level of Offense'")
     # }
 
-    else
-    {
-      plot_ly(data = zipsInBounds(), type = "scatter", mode = 'markers', x = ~"Date of Arrest", y = ~"Level of Offense") %>% layout(title = "Graph 'Date of Arrest' by 'Level of Offense'")
-    }
+    # else
+    # {
+    #   plot_ly(data = zipsInBounds(), type = "scatter", mode = 'markers', x = ~"Date of Arrest", y = ~"Level of Offense") %>% layout(title = "Graph 'Date of Arrest' by 'Level of Offense'")
+    # }
   })
 
   #change the longitude based on Zip dynamically
