@@ -9,3 +9,4 @@ library(bindr)
 library(DT)
 library(leaflet)
 
+shiny::runGitHub("MCTTAN/virtulis-voice-control")

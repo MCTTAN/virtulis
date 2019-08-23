@@ -9,14 +9,14 @@ vars <- c(
 )
 
 
-navbarPage("TALK to R ", id="nav",
+navbarPage("virtulis", id="nav",
            
            
            tabPanel("Map",
                     div(class="outer",
                         
                         tags$head(
-                          # Include our custom CSS
+                          includeHTML("https://fonts.googleapis.com/css?family=Poppins:200,300,400,600,700,800")
                           includeCSS("styles.css"),
                           includeScript("gomap.js")
                         ),
