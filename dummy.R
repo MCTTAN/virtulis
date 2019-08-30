@@ -1,60 +1,153 @@
 library(ggplot2)
-library(gganimate)
-library(ggforce)
+library(scales)
+library(extrafont)
+library(dplyr)
 library(tweenr)
+library(lubridate)
+library(animation)
+library(RColorBrewer)
+library(grid)
+loadfonts()
 
-# Making up data
-t <- data.frame(x=0, y=0, colour = 'forestgreen', size=1, alpha = 1, 
-                stringsAsFactors = FALSE)
-t <- t[rep(1, 12),]
-t$alpha[2:12] <- 0
-t2 <- t
-t2$y <- 1
-t2$colour <- 'firebrick'
-t3 <- t2
-t3$x <- 1
-t3$colour <- 'steelblue'
-t4 <- t3
-t4$y <- 0
-t4$colour <- 'goldenrod'
-t5 <- t4
-c <- ggforce::radial_trans(c(1,1), c(1, 12))$transform(rep(1, 12), 1:12)
-t5$x <- (c$x + 1) / 2
-t5$y <- (c$y + 1) / 2
-t5$alpha <- 1
-t5$size <- 0.5
-t6 <- t5
-t6 <- rbind(t5[12,], t5[1:11, ])
-t6$colour <- 'firebrick'
-t7 <- rbind(t6[12,], t6[1:11, ])
-t7$colour <- 'steelblue'
-t8 <- t7
-t8$x <- 0.5
-t8$y <- 0.5
-t8$size <- 2
-t9 <- t
-ts <- list(t, t2, t3, t4, t5, t6, t7, t8, t9)
 
-tweenlogo <- data.frame(x=0.5, y=0.5, label = 'tweenr', stringsAsFactors = F)
-tweenlogo <- tweenlogo[rep(1, 60),]
-tweenlogo$.frame <- 316:375
+# create data frame from txhousing data included in ggplot2 package
+txHousingData <- txhousing %>% filter(city %in% unique(txhousing$city)[1:2] & month==1)
+txHousingData <- txHousingData[,c(1,2,6)]
+txHousingData$city <- factor(txHousingData$city, levels = c("Abilene","Amarillo"), labels = c("Abilene","Amarillo"))
 
-# Using tweenr
-tf <- tween_states(ts, tweenlength = 2, statelength = 1, 
-                   ease = c('cubic-in-out', 'elastic-out', 'bounce-out', 
-                            'cubic-out', 'sine-in-out', 'sine-in-out', 
-                            'circular-in', 'back-out'), 
-                   nframes = 375)
+# determine the unique data values that tweenr will iterate over (in this case year)
+txList <- split(txHousingData,txHousingData$year)
 
-# Animate with gganimate
-p <- ggplot(data=tf, aes(x=x, y=y)) + 
-  geom_text(aes(label = label, frame = .frame), data=tweenlogo, size = 13) + 
-  geom_point(aes(frame = .frame, size=size, alpha = alpha, colour = colour)) + 
-  scale_colour_identity() + 
-  scale_alpha(range = c(0, 1), guide = 'none') +
-  scale_size(range = c(4, 60), guide = 'none') + 
-  expand_limits(x=c(-0.36, 1.36), y=c(-0.36, 1.36)) + 
-  theme_bw()
-animation::ani.options(interval = 1/15)
-gg_animate(p, "dancing ball.gif", title_frame = F, ani.width = 400, 
-           ani.height = 400)
+# Apply tweenr to interpolate frames between data points
+txTweenedData <- tween_states(txList, tweenlength= 1, statelength=0, ease='linear',nframes=200)
+
+theme_white <- theme(text = element_text(family="Open Sans"),
+                     panel.grid.major.y=element_blank(),
+                     panel.grid.major.x=element_blank(),
+                     panel.grid.minor.x=element_blank(),
+                     panel.grid.minor.y=element_blank(),
+                     axis.title.x=element_text(size=20, margin = margin(t=10)),
+                     axis.title.y=element_text(size=20, margin = margin(t=10)),
+                     axis.text.x=element_text(size=16),
+                     axis.text.y=element_text(size=16),
+                     axis.ticks = element_blank(),
+                     plot.title=element_text(size=26,family = "Open Sans",lineheight=1.15),
+                     plot.subtitle=element_text(size=20, margin = margin(t=20, b = -5),hjust = -0.03, family = "Open Sans"),
+                     plot.caption=element_text(size=14, margin=margin(t=15,r=-15),hjust = -.03,lineheight=1.15, family = "Open Sans", face  = "italic"),
+                     legend.position="none"
+)
+
+# color palette
+my_palette = c("#3EC7F4", "#3FA66C")
+
+# y axis breaks and labels
+yAxisBreaks <- seq(0, 140000, by = 20000)
+yAxisLabels <- paste0(format(yAxisBreaks))
+yAxisLimits <- c(0,max(yAxisBreaks)* 1.03)
+yAxisLabels <- c(yAxisLabels[1:length(yAxisLabels)-1], paste0("$",yAxisLabels[length(yAxisLabels)]))
+
+# x axis breaks and labels
+xAxis <- seq(2000, 2015, by = 2)
+xAxisBreaks <- xAxis
+xAxisLimits <- c(1999.5, 2019)
+
+# plot text
+title <- "Median sale price of homes in Abilene and Amarillo, 2000 through 2015"
+subtitle <- ""
+caption <- "Information about the housing market in Texas provided by the TAMU real estate center, http://recenter.tamu.edu/."
+xLab <- "Year"
+yLab <- "Median sale price"
+
+midPoint <- round(max(txTweenedData$.frame) / 2)
+
+# add adjustments for line labels
+txTweenedData$LevelLabel <- as.character(txTweenedData$city)
+txTweenedData$nudge_x <- ifelse(txTweenedData$LevelLabel=="Abilene", 1.096,ifelse(txTweenedData$LevelLabel=="Amarillo",1.233,0))
+txTweenedData$nudge_y <- 0
+
+#calculate midpoint of the plot
+midPoint <- round(max(txTweenedData$.frame) / 2)
+
+g2 <- ggplot(data = subset(txTweenedData, .frame <= midPoint), aes(x = year, y = median, .frame = midPoint)) +
+  geom_point(data = subset(txTweenedData, .frame == min(.frame)),aes(group=city, color=city), size=5) + 
+  geom_point(data = subset(txTweenedData, .frame == midPoint),aes(group=city, color=city), size=5) + 
+  geom_line(aes(group=city, color=city, cumulative = TRUE, label=LevelLabel), size=2.5) +
+  scale_x_continuous(labels=xAxisBreaks, expand = c(0, 0), breaks=xAxisBreaks, limits =xAxisLimits) +                     
+  scale_y_continuous(labels=yAxisLabels, expand = c(0, 0), breaks=yAxisBreaks,limits = yAxisLimits)
+# g2
+
+# replicate(75,grid.draw(g2))
+
+
+
+
+
+saveGIF({
+  
+  # print from tue first frame to the midpoint of the figure
+  for(i in 1:midPoint) {
+    g1 <-  ggplot(data = subset(txTweenedData, .frame <= i), aes(x = year, y = median, .frame = i)) +
+      geom_point(data = subset(txTweenedData, .frame == min(.frame)),aes(group=city, color=city), size=5) + 
+      geom_line(aes(group=city, color=city, cumulative = TRUE, label=LevelLabel), size=2.5) +
+      scale_x_continuous(labels=xAxisBreaks, expand = c(0, 0), breaks=xAxisBreaks, limits =xAxisLimits) +                     
+      scale_y_continuous(labels=yAxisLabels, expand = c(0, 0), breaks=yAxisBreaks,limits = yAxisLimits) +
+      theme_minimal() + theme_white + scale_color_manual(values=my_palette) +
+      geom_text(data = subset(txTweenedData, .frame == i),aes(label =LevelLabel), size = 9, nudge_y = subset(txTweenedData, .frame == i)$nudge_y, nudge_x = subset(txTweenedData, .frame == i)$nudge_x, family = "Open Sans", lineheight = 0.75) +
+      labs(x=xLab, y=yLab, title = title, subtitle = subtitle, 
+           caption = caption)
+    print(g1);  
+  }
+  
+  # print the midpoint 75 times to create a pause
+  g2 <- ggplot(data = subset(txTweenedData, .frame <= midPoint), aes(x = year, y = median, .frame = midPoint)) +
+    geom_point(data = subset(txTweenedData, .frame == min(.frame)),aes(group=city, color=city), size=5) + 
+    geom_point(data = subset(txTweenedData, .frame == midPoint),aes(group=city, color=city), size=5) + 
+    geom_line(aes(group=city, color=city, cumulative = TRUE, label=LevelLabel), size=2.5) +
+    scale_x_continuous(labels=xAxisBreaks, expand = c(0, 0), breaks=xAxisBreaks, limits =xAxisLimits) +                     
+    scale_y_continuous(labels=yAxisLabels, expand = c(0, 0), breaks=yAxisBreaks,limits = yAxisLimits) +
+    theme_minimal() + theme_white + scale_color_manual(values=my_palette) +
+    geom_text(data = subset(txTweenedData, .frame == midPoint),aes(label =LevelLabel), size = 9, nudge_y = subset(txTweenedData, .frame == midPoint)$nudge_y, nudge_x = subset(txTweenedData, .frame == midPoint)$nudge_x, family = "Open Sans", lineheight = 0.75) + 
+    labs(x=xLab, y=yLab, title = title, subtitle = subtitle, 
+         caption = caption)
+  
+  g2 
+  
+  replicate(75,grid.draw(g2))
+  
+  # print from tue midpoint of the figure until the last frame
+  for(i in midPoint:max(txTweenedData$.frame)) {
+    g3 <- ggplot(data = subset(txTweenedData, .frame <= i), aes(x = year, y = median, .frame = i)) +
+      geom_point(data = subset(txTweenedData, .frame == min(.frame)),aes(group=city, color=city), size=5) + 
+      geom_line(aes(group=city, color=city, cumulative = TRUE, label=LevelLabel), size=2.5) +
+      scale_x_continuous(labels=xAxisBreaks, expand = c(0, 0), breaks=xAxisBreaks, limits =xAxisLimits) +                     
+      scale_y_continuous(labels=yAxisLabels, expand = c(0, 0), breaks=yAxisBreaks,limits = yAxisLimits) +
+      theme_minimal() + theme_white + scale_color_manual(values=my_palette) +
+      geom_text(data = subset(txTweenedData, .frame == i),aes(label =LevelLabel), size = 9, nudge_y = subset(txTweenedData, .frame == i)$nudge_y, nudge_x = subset(txTweenedData, .frame == i)$nudge_x, family = "Open Sans", lineheight = 0.75) +
+      labs(x=xLab, y=yLab, title = title, subtitle = subtitle, 
+           caption = caption)
+    print(g3);  }
+  
+  # print the final frame of the figure 110 times to create an ending pause 
+  wholeFig <- ggplot(data = subset(txTweenedData, .frame <= i), aes(x = year, y = median, .frame = i)) +
+    geom_point(data = subset(txTweenedData, .frame == min(.frame)),aes(group=city, color=city), size=5) + 
+    geom_point(data = subset(txTweenedData, .frame == i),aes(group=city, color=city), size=5) +
+    geom_line(aes(group=city, color=city, cumulative = TRUE, label=LevelLabel), size=2.5) +
+    scale_x_continuous(labels=xAxisBreaks, expand = c(0, 0), breaks=xAxisBreaks, limits =xAxisLimits) +                     
+    scale_y_continuous(labels=yAxisLabels, expand = c(0, 0), breaks=yAxisBreaks,limits = yAxisLimits) +
+    theme_minimal() + theme_white + scale_color_manual(values=my_palette) +
+    geom_text(data = subset(txTweenedData, .frame == i),aes(label =LevelLabel), size = 9, nudge_y = subset(txTweenedData, .frame == i)$nudge_y, nudge_x = subset(txTweenedData, .frame == i)$nudge_x, family = "Open Sans", lineheight = 0.75) +
+    labs(x=xLab, y=yLab, title = title, subtitle = subtitle, 
+         caption = caption)   
+  
+  replicate(110,grid.draw(wholeFig))
+},movie.name="C:/Users/14438/Documents/virtulis/txHousing.gif",interval = .02, ani.width = 1024, ani.height = 612)
+
+# compress gif
+gif_compress <- function(ingif, outgif, show=TRUE, extra.opts=""){
+  command <-  sprintf("gifsicle -O3 %s < %s > %s", extra.opts, ingif, outgif)
+  system.fun <- if (.Platform$OS.type == "windows") shell else system
+  if(show) message("Executing: ", strwrap(command, exdent = 2, prefix = "\n"))
+  system.fun(ifelse(.Platform$OS.type == "windows", sprintf("\"%s\"", shQuote(command)), command))
+}
+
+gif_compress("C:/Users/14438/Documents/virtulis/txHousing.gif","C:/Users/14438/Documents/virtulis/txHousing.gif",extra.opts="--colors 256")
