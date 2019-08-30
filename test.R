@@ -92,7 +92,7 @@ saveGIF({for (i in 1:max(data$.frame)) {
   ani.pause()}
 },movie.name="C:/Users/14438/Documents/virtulis/txHousing.gif",ani.width = 700, ani.height = 540) #replace YOURDIRECTORY with a place where you want to save the gif
 
-
+anim_save("C:/Users/14438/Documents/virtulis/txHousing.gif", df.plot)
 
 
 
