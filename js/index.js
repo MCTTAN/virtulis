@@ -5,6 +5,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("user-div").style.display = "initial";
     
   }
+  if(user != null){
+    var email_id = user.email;
+    document.getElementById("logged-in-message").innerHTML = "Welcome User: " + email_id;
+  }
+  
   else {
     // No user is signed in.
     document.getElementById("login-div").style.display = "none";
@@ -23,4 +28,8 @@ function login() {
     
     window.alert("Error: " + errorMessage);
   });
+}
+
+function logout() {
+  firebase.auth().signOut();
 }
