@@ -1,8 +1,12 @@
 firebase.auth().onAuthStateChanged(function(user) {
   if(user) {
     // User is signed in.
-    document.getElementById("login-div").style.display = "none";
-    document.getElementById("user-div").style.display = "initial";
+    // document.getElementById("login-div").style.display = "none";
+    // document.getElementById("user-div").style.display = "initial";
+    document.getElementById("login-div").addEventListener('sign-in-general-button', submitForm);
+    // document.getElementById("login-div").addEventListener('sign-in-facebook-button', submitForm);
+    // document.getElementById("login-div").addEventListener('sign-in-twitter-button', submitForm);
+    // document.getElementById("login-div").addEventListener('sign-in-google-button', submitForm);
     
   }
   if(user !== null){
@@ -16,6 +20,11 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("user-div").style.display = "block";
   }
 });
+
+function submitForm(e) {
+  e.preventDefault();
+  console.log(123);
+}
 
 function login() {
   var userEmail = document.getElementById("email-string").value;
