@@ -46,28 +46,25 @@
                                 <img src="https://github.com/MCTTAN/virtulis/blob/master/media/virtulis-logo.png?raw=true" style="max-width: 75px; max-height: 75px;">
                             </a>
                         </div>
-                        <div id ="login-div" class="login-form">
+                        <div class="login-form">
                             <form action="" method="post">
                                 <div class="form-group">
                                     <label>Email Address</label>
-                                    <input id="email-string" class="au-input au-input--full" type="email" name="email" placeholder="Email">
+                                    <input class="au-input au-input--full" type="email" name="email" placeholder="Email">
                                 </div>
                                 <div class="form-group">
                                     <label>Password</label>
-                                    <input id="password-string" class="au-input au-input--full" type="password" name="password" placeholder="Password">
+                                    <input class="au-input au-input--full" type="password" name="password" placeholder="Password">
                                 </div>
                                 <div class="login-checkbox">
                                     <label>
                                         <input type="checkbox" name="remember">Remember Me
                                     </label>
-                                    <label>
-                                        <a href="#">Forgotten Password?</a>
-                                    </label>
                                 </div>
-                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign in</button>
+                                <button class="au-btn au-btn--block au-btn--green m-b-20" type="submit">sign up</button>
                                 <div class="social-login-content">
                                     <div class="social-button">
-                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign in with facebook</button>
+                                        <button class="au-btn au-btn--block au-btn--blue m-b-20">sign up with facebook</button>
                                         <button class="au-btn au-btn--block au-btn--blue2 m-b-20">sign up with twitter</button>
                                         <button class="au-btn au-btn--block au-btn--blue2 m-b-20" style="background-color: black;">sign up with google</button>
                                     </div>
@@ -75,8 +72,8 @@
                             </form>
                             <div class="register-link">
                                 <p>
-                                    Don't have an account?
-                                    <a href="sign-up.html">Sign Up</a>
+                                    Have an account?
+                                    <a href="login.html">Login</a>
                                 </p>
                             </div>
                         </div>
@@ -87,38 +84,10 @@
 
     </div>
     
-    <div id="user-div" class="logged-in" style="text-align: center;">
+    <div class="logged-in">
         <h3>Welcome User!</h3>
-        <br>
         <p>Firebase web login.</p>
-        <br>
-        <button>Logout</button>
     </div>
-    
-    <!-- Firebase Login -->
-    
-    <!-- The core Firebase JS SDK is always required and must be listed first -->
-    <script src="https://www.gstatic.com/firebasejs/7.14.0/firebase-app.js"></script>
-    
-    <!-- TODO: Add SDKs for Firebase products that you want to use
-         https://firebase.google.com/docs/web/setup#available-libraries -->
-    
-    <script>
-      // Your web app's Firebase configuration
-      var firebaseConfig = {
-        apiKey: "AIzaSyBxpChnKp_r1fy7B9931Cnxqe0T-OftvgY",
-        authDomain: "virtulis-da62b.firebaseapp.com",
-        databaseURL: "https://virtulis-da62b.firebaseio.com",
-        projectId: "virtulis-da62b",
-        storageBucket: "virtulis-da62b.appspot.com",
-        messagingSenderId: "727096552336",
-        appId: "1:727096552336:web:3434a5e281580db3"
-      };
-      // Initialize Firebase
-      firebase.initializeApp(firebaseConfig);
-    </script>
-    
-    <script src="js/index.js"></script>
 
     <!-- Jquery JS-->
     <script src="vendor/jquery-3.2.1.min.js"></script>
