@@ -5,7 +5,7 @@ firebase.auth().onAuthStateChanged(function(user) {
     document.getElementById("user-div").style.display = "initial";
     
   }
-  if(user != null){
+  if(user !== null){
     var email_id = user.email;
     document.getElementById("logged-in-message").innerHTML = "Welcome User: " + email_id;
   }
